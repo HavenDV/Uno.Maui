@@ -12,7 +12,7 @@ namespace Microsoft.Maui.Platform
 {
 	public static partial class WindowExtensions
 	{
-		internal static Rect[]? GetDefaultTitleBarDragRectangles(this UI.Xaml.Window platformWindow, IWindow window)
+		public static Rect[]? GetDefaultTitleBarDragRectangles(this UI.Xaml.Window platformWindow, IWindow window)
 		{
 			if (window?.Handler?.MauiContext is IMauiContext mauiContext)
 			{
@@ -22,7 +22,7 @@ namespace Microsoft.Maui.Platform
 			return null;
 		}
 
-		internal static Rect[]? GetDefaultTitleBarDragRectangles(this UI.Xaml.Window platformWindow, IMauiContext mauiContext)
+		public static Rect[]? GetDefaultTitleBarDragRectangles(this UI.Xaml.Window platformWindow, IMauiContext mauiContext)
 		{
 			if (!AppWindowTitleBar.IsCustomizationSupported())
 				return null;
@@ -44,7 +44,7 @@ namespace Microsoft.Maui.Platform
 			platformWindow.UpdateTitle(window, window.Handler?.MauiContext);
 		}
 
-		internal static void UpdateTitle(this UI.Xaml.Window platformWindow, IWindow window, IMauiContext? mauiContext)
+		public static void UpdateTitle(this UI.Xaml.Window platformWindow, IWindow window, IMauiContext? mauiContext)
 		{
 			platformWindow.Title = window.Title;
 			mauiContext?
@@ -238,21 +238,21 @@ namespace Microsoft.Maui.Platform
 			return PlatformMethods.GetDpiForWindow(hwnd) / DeviceDisplay.BaseLogicalDpi;
 		}
 
-		internal static void Minimize(this UI.Xaml.Window platformWindow)
+		public static void Minimize(this UI.Xaml.Window platformWindow)
 		{
 			PlatformMethods
 				.ShowWindow(platformWindow.GetWindowHandle(),
 							PlatformMethods.ShowWindowFlags.SW_MINIMIZE);
 		}
 
-		internal static void Maximize(this UI.Xaml.Window platformWindow)
+		public static void Maximize(this UI.Xaml.Window platformWindow)
 		{
 			PlatformMethods
 				.ShowWindow(platformWindow.GetWindowHandle(),
 							PlatformMethods.ShowWindowFlags.SW_MAXIMIZE);
 		}
 
-		internal static void Restore(this UI.Xaml.Window platformWindow)
+		public static void Restore(this UI.Xaml.Window platformWindow)
 		{
 			PlatformMethods
 				.ShowWindow(platformWindow.GetWindowHandle(),
@@ -270,7 +270,7 @@ namespace Microsoft.Maui.Platform
 			return UI.Windowing.AppWindow.GetFromWindowId(windowId);
 		}
 
-		internal static DisplayOrientation GetOrientation(this IWindow? window)
+		public static DisplayOrientation GetOrientation(this IWindow? window)
 		{
 			if (window == null)
 				return DeviceDisplay.Current.MainDisplayInfo.Orientation;

@@ -24,7 +24,7 @@ using NativeWindow = System.Object;
 
 namespace Microsoft.Maui
 {
-	internal static partial class MauiContextExtensions
+	public static partial class MauiContextExtensions
 	{
 		public static IAnimationManager GetAnimationManager(this IMauiContext mauiContext) =>
 			mauiContext.Services.GetRequiredService<IAnimationManager>();

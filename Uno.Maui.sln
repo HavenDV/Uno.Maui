@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uno.Maui.Graphics", "src\li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uno.Maui.Essentials", "src\libs\Uno.Maui.Essentials\Uno.Maui.Essentials.csproj", "{7A89E4C3-DEC3-4058-BFF2-463DB5E9B9B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uno.Maui.Controls.Core", "src\libs\Uno.Maui.Controls.Core\Uno.Maui.Controls.Core.csproj", "{A9041FB2-5C48-44F8-9511-932764F50C04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7A89E4C3-DEC3-4058-BFF2-463DB5E9B9B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A89E4C3-DEC3-4058-BFF2-463DB5E9B9B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A89E4C3-DEC3-4058-BFF2-463DB5E9B9B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9041FB2-5C48-44F8-9511-932764F50C04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9041FB2-5C48-44F8-9511-932764F50C04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9041FB2-5C48-44F8-9511-932764F50C04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9041FB2-5C48-44F8-9511-932764F50C04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

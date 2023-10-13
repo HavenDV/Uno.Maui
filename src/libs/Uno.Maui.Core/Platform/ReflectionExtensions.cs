@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace Microsoft.Maui.Platform
 {
-	internal static class ReflectionExtensions
+	public static class ReflectionExtensions
 	{
 		public static FieldInfo? GetField(this Type type, Func<FieldInfo, bool> predicate)
 		{
@@ -19,7 +19,7 @@ namespace Microsoft.Maui.Platform
 			return GetParts(type, i => i.DeclaredFields);
 		}
 
-		internal static object[]? GetCustomAttributesSafe(this Assembly assembly, Type attrType)
+		public static object[]? GetCustomAttributesSafe(this Assembly assembly, Type attrType)
 		{
 			try
 			{

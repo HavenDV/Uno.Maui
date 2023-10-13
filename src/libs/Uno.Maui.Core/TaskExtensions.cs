@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Microsoft.Maui
 {
-	internal static class TaskExtensions
+	public static class TaskExtensions
 	{
 		public static async void FireAndForget<TResult>(
 			   this Task<TResult> task,

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Microsoft.Maui
 {
-	internal static class EnumerableExtensions
+	public static class EnumerableExtensions
 	{
 		/// <summary>
 		/// Loops trough each item in <paramref name="enumeration"/> and invokes <paramref name="action"/> on it.

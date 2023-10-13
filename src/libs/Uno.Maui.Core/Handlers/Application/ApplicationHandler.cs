@@ -20,7 +20,7 @@ namespace Microsoft.Maui.Handlers
 	/// <seealso href="https://learn.microsoft.com/dotnet/maui/user-interface/handlers/">Conceptual documentation on handlers</seealso>
 	public partial class ApplicationHandler
 	{
-		internal const string TerminateCommandKey = "Terminate";
+		public const string TerminateCommandKey = "Terminate";
 
 		public static IPropertyMapper<IApplication, ApplicationHandler> Mapper = new PropertyMapper<IApplication, ApplicationHandler>(ElementMapper)
 		{

@@ -3,7 +3,7 @@ using Microsoft.Maui.Graphics;
 
 namespace Microsoft.Maui
 {
-	internal static class IndicatorViewExtensions
+	public static class IndicatorViewExtensions
 	{
 		/// <summary>
 		/// Gets the maximum number of visible indicator items that can be shown.

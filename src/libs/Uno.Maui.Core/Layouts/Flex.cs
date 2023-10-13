@@ -15,7 +15,7 @@ namespace Microsoft.Maui.Layouts.Flex
 	/// <summary>
 	/// Values for <see cref="P:Microsoft.Maui.Controls.Flex.Item.AlignContent" />.
 	/// </summary>
-	enum AlignContent
+	public enum AlignContent
 	{
 		/// <summary>
 		/// Whether an item's should be stretched out.
@@ -50,7 +50,7 @@ namespace Microsoft.Maui.Layouts.Flex
 	/// <summary>
 	/// Values for <see cref="P:Microsoft.Maui.Controls.Flex.Item.AlignItems" />.
 	/// </summary>
-	enum AlignItems
+	public enum AlignItems
 	{
 		/// <summary>
 		/// Whether an item's should be stretched out.
@@ -74,7 +74,7 @@ namespace Microsoft.Maui.Layouts.Flex
 	/// <summary>
 	/// Values for <see cref="P:Microsoft.Maui.Controls.Flex.Item.AlignSelf" />.
 	/// </summary>
-	enum AlignSelf
+	public enum AlignSelf
 	{
 		/// <summary>
 		/// Whether an item should be packed according to the alignment value of its parent.
@@ -102,7 +102,7 @@ namespace Microsoft.Maui.Layouts.Flex
 	/// <summary>
 	/// Values for <see cref="P:Microsoft.Maui.Controls.Flex.Item.Direction" />.
 	/// </summary>
-	enum Direction
+	public enum Direction
 	{
 		/// <summary>
 		/// Whether items should be stacked horizontally.
@@ -125,7 +125,7 @@ namespace Microsoft.Maui.Layouts.Flex
 	/// <summary>
 	/// Values for <see cref="P:Microsoft.Maui.Controls.Flex.Item.Justify" />.
 	/// </summary>
-	enum Justify
+	public enum Justify
 	{
 		/// <summary>
 		/// Whether an item should be packed around the center.
@@ -156,7 +156,7 @@ namespace Microsoft.Maui.Layouts.Flex
 	/// <summary>
 	/// Values for <see cref="P:Microsoft.Maui.Controls.Flex.Item.Position" />.
 	/// </summary>
-	enum Position
+	public enum Position
 	{
 		/// <summary>
 		/// Whether the item's frame will be determined by the flex rules of the layout system.
@@ -171,7 +171,7 @@ namespace Microsoft.Maui.Layouts.Flex
 	/// <summary>
 	/// Values for <see cref="P:Microsoft.Maui.Controls.Flex.Item.Wrap" />.
 	/// </summary>
-	enum Wrap
+	public enum Wrap
 	{
 		/// <summary>
 		/// Whether items are laid out in a single line.
@@ -190,7 +190,7 @@ namespace Microsoft.Maui.Layouts.Flex
 	/// <summary>
 	/// Value for <see cref="P:Microsoft.Maui.Controls.Flex.Item.Basis" />.
 	/// </summary>
-	struct Basis
+	public struct Basis
 	{
 		readonly bool _isRelative;
 		readonly bool _isLength;
@@ -228,7 +228,7 @@ namespace Microsoft.Maui.Layouts.Flex
 	/// <summary>
 	/// An item with flexbox properties. Items can also contain other items and be enumerated.
 	/// </summary>
-	class Item : IEnumerable<Item>
+	public class Item : IEnumerable<Item>
 	{
 		/// <summary>
 		/// Gets the frame (x, y, w, h).

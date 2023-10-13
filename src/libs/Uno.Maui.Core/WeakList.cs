@@ -9,7 +9,7 @@ namespace Microsoft.Maui;
 /// A List type for holding WeakReference's
 /// It clears the underlying List based on a threshold of operations: Add() or GetEnumerator()
 /// </summary>
-class WeakList<T> : IEnumerable<T> where T : class
+public class WeakList<T> : IEnumerable<T> where T : class
 {
 	readonly List<WeakReference<T>> _list = new();
 	int _operations;

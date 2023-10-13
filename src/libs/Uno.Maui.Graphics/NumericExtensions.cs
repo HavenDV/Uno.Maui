@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 namespace Microsoft.Maui.Graphics
 {
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	internal static class NumericExtensions
+	public static class NumericExtensions
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static float Clamp(this float self, float min, float max)

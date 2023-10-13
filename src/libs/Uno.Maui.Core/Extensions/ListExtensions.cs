@@ -2,7 +2,7 @@
 
 namespace Microsoft.Maui
 {
-	internal static class ListExtensions
+	public static class ListExtensions
 	{
 		/// <summary>
 		/// Attempts to remove an item from a <see cref="IList{T}"/> instance.

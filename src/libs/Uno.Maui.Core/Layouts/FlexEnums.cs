@@ -76,8 +76,8 @@ namespace Microsoft.Maui.Layouts
 		bool _isLength;
 		bool _isRelative;
 		public float Length { get; }
-		internal bool IsAuto => !_isLength && !_isRelative;
-		internal bool IsRelative => _isRelative;
+		public bool IsAuto => !_isLength && !_isRelative;
+		public bool IsRelative => _isRelative;
 
 		public static readonly FlexBasis Auto;
 

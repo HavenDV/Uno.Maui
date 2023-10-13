@@ -5,7 +5,7 @@ using Microsoft.Maui.Graphics;
 
 namespace Microsoft.Maui.Graphics
 {
-	internal static class RectangleExtensions
+	public static class RectangleExtensions
 	{
 		public static Rect Inset(this Rect rectangle, double inset)
 		{

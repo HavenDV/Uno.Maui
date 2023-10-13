@@ -9,7 +9,7 @@
 		PathF PathForBounds(Rect bounds);
 	}
 
-	internal interface IRoundRectangle : IShape
+	public interface IRoundRectangle : IShape
 	{
 		PathF InnerPathForBounds(Rect bounds, float strokeThickness);
 	}

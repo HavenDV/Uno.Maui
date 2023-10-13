@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace Microsoft.Maui.Platform
 {
-	class ActionDisposable : IDisposable
+	public class ActionDisposable : IDisposable
 	{
 		volatile Action? _action;
 		public ActionDisposable(Action action)

@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace Microsoft.Maui
 {
-	static class ElementHandlerExtensions
+	public static class ElementHandlerExtensions
 	{
 		public static PlatformView ToPlatform(this IElementHandler elementHandler) =>
 			(elementHandler.VirtualView?.ToPlatform() as PlatformView) ??

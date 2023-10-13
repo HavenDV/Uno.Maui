@@ -2,7 +2,7 @@ using System;
 
 namespace Microsoft.Maui
 {
-	internal static class ArrayExtensions
+	public static class ArrayExtensions
 	{
 		/// <summary>
 		/// Inserts an object at a certain index of an array.
