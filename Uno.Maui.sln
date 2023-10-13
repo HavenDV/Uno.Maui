@@ -15,12 +15,30 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\pr.yml = .github\workflows\pr.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uno.Maui.Core", "src\libs\Uno.Maui.Core\Uno.Maui.Core.csproj", "{A0D40F30-A021-413F-8A20-02C44495F5C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uno.Maui.Graphics", "src\libs\Uno.Maui.Graphics\Uno.Maui.Graphics.csproj", "{20395B6E-7308-479F-8A31-7620E973F813}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uno.Maui.Essentials", "src\libs\Uno.Maui.Essentials\Uno.Maui.Essentials.csproj", "{7A89E4C3-DEC3-4058-BFF2-463DB5E9B9B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0D40F30-A021-413F-8A20-02C44495F5C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D40F30-A021-413F-8A20-02C44495F5C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0D40F30-A021-413F-8A20-02C44495F5C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D40F30-A021-413F-8A20-02C44495F5C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20395B6E-7308-479F-8A31-7620E973F813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20395B6E-7308-479F-8A31-7620E973F813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20395B6E-7308-479F-8A31-7620E973F813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20395B6E-7308-479F-8A31-7620E973F813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A89E4C3-DEC3-4058-BFF2-463DB5E9B9B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A89E4C3-DEC3-4058-BFF2-463DB5E9B9B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A89E4C3-DEC3-4058-BFF2-463DB5E9B9B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A89E4C3-DEC3-4058-BFF2-463DB5E9B9B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
