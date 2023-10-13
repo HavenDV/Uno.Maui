@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net4.6.2;net6.0;net7.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Nuget">
+    <PackageId>H.Uno.Maui.Core</PackageId>
+    <Description>Core MAUI package for Uno platforms</Description>
+    <PackageTags>uno;maui;gtk;linux;skia;wpf;webassembly;wasm;platforms;uno-platform</PackageTags>
+  </PropertyGroup>
+
+</Project>
