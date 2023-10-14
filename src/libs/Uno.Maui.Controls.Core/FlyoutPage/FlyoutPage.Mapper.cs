@@ -8,7 +8,7 @@ namespace Microsoft.Maui.Controls
 		[Obsolete("Use FlyoutViewHandler.Mapper instead.")]
 		public static IPropertyMapper<IFlyoutView, FlyoutViewHandler> ControlsFlyoutPageMapper = new PropertyMapper<IFlyoutView, FlyoutViewHandler>(FlyoutViewHandler.Mapper);
 
-		internal new static void RemapForControls()
+		public new static void RemapForControls()
 		{
 			FlyoutViewHandler.Mapper.ReplaceMapping<IFlyoutView, IFlyoutViewHandler>(nameof(FlyoutLayoutBehavior), MapFlyoutLayoutBehavior);
 		}

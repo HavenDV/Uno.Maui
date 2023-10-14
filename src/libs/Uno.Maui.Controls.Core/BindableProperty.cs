@@ -192,7 +192,7 @@ namespace Microsoft.Maui.Controls
 				defaultValueCreator);
 		}
 
-		internal object GetDefaultValue(BindableObject bindable)
+		public object GetDefaultValue(BindableObject bindable)
 		{
 			if (DefaultValueCreator != null)
 				return DefaultValueCreator(bindable);

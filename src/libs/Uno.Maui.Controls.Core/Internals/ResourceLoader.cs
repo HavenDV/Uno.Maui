@@ -34,6 +34,6 @@ namespace Microsoft.Maui.Controls.Internals
 			public bool UseDesignProperties { get; set; }
 		}
 
-		internal static Action<(Exception exception, string filepath)> ExceptionHandler2 { get; set; }
+		public static Action<(Exception exception, string filepath)> ExceptionHandler2 { get; set; }
 	}
 }

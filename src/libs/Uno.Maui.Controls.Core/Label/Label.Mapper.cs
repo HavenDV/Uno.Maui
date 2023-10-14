@@ -10,7 +10,7 @@ namespace Microsoft.Maui.Controls
 		[Obsolete("Use LabelHandler.Mapper instead.")]
 		public static IPropertyMapper<ILabel, LabelHandler> ControlsLabelMapper = new PropertyMapper<Label, LabelHandler>(LabelHandler.Mapper);
 
-		internal static new void RemapForControls()
+		public static new void RemapForControls()
 		{
 			// Adjust the mappings to preserve Controls.Label legacy behaviors
 			// ILabel does not include the TextType property, so we map it here to handle HTML text

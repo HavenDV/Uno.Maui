@@ -1,5 +1,7 @@
 <Project>
-  
+
+  <Sdk Name="ViHo.PackAsAnalyzer" Version="1.0.1" />
+
   <Import Project="..\Directory.Build.props" />
 
   <PropertyGroup Label="Signing">
@@ -14,7 +16,7 @@
   </ItemGroup>
   
   <PropertyGroup Label="Nuget">
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Authors>Uno Platform</Authors>

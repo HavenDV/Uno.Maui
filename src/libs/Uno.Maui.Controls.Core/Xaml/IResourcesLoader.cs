@@ -6,7 +6,7 @@ using System.Xml;
 
 namespace Microsoft.Maui.Controls
 {
-	interface IResourcesLoader
+	public interface IResourcesLoader
 	{
 		T CreateFromResource<T>(string resourcePath, Assembly assembly, IXmlLineInfo lineInfo) where T : new();
 		string GetResource(string resourcePath, Assembly assembly, object target, IXmlLineInfo lineInfo);

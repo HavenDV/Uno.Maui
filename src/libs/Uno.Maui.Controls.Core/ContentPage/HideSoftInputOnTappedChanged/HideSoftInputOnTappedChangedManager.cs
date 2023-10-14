@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Microsoft.Maui.Controls
 {
-	partial class HideSoftInputOnTappedChangedManager
+	public partial class HideSoftInputOnTappedChangedManager
 	{
 		List<ContentPage> _contentPages = new List<ContentPage>();
 

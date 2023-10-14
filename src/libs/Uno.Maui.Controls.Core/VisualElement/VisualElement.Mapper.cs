@@ -10,7 +10,7 @@ namespace Microsoft.Maui.Controls
 		[Obsolete("Use ViewHandler.ViewMapper instead.")]
 		public static IPropertyMapper<IView, IViewHandler> ControlsVisualElementMapper = new PropertyMapper<IView, IViewHandler>(Element.ControlsElementMapper);
 
-		internal static new void RemapForControls()
+		public static new void RemapForControls()
 		{
 #if WINDOWS
 			ViewHandler.ViewMapper.ReplaceMapping<IView, IViewHandler>(PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyHorizontalOffsetProperty.PropertyName, MapAccessKeyHorizontalOffset);

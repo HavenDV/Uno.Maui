@@ -9,7 +9,7 @@ namespace Microsoft.Maui.Controls
 		public static IPropertyMapper<IStackNavigationView, NavigationViewHandler> ControlsNavigationPageMapper =
 			new PropertyMapper<NavigationPage, NavigationViewHandler>(NavigationViewHandler.Mapper);
 
-		internal static new void RemapForControls()
+		public static new void RemapForControls()
 		{
 			// Adjust the mappings to preserve Controls.NavigationPage legacy behaviors
 #if IOS

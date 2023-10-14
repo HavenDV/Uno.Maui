@@ -9,7 +9,7 @@ namespace Microsoft.Maui.Controls
 		public static IPropertyMapper<IScrollView, ScrollViewHandler> ControlsScrollViewMapper =
 				new PropertyMapper<ScrollView, ScrollViewHandler>(ScrollViewHandler.Mapper);
 
-		internal static new void RemapForControls()
+		public static new void RemapForControls()
 		{
 			// Adjust the mappings to preserve Controls.ScrollView legacy behaviors
 #if IOS

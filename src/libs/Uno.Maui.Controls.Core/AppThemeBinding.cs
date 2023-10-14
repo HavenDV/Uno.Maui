@@ -6,7 +6,7 @@ using Microsoft.Maui.Controls.Xaml.Diagnostics;
 
 namespace Microsoft.Maui.Controls
 {
-	class AppThemeBinding : BindingBase
+	public class AppThemeBinding : BindingBase
 	{
 		WeakReference<BindableObject> _weakTarget;
 		BindableProperty _targetProperty;

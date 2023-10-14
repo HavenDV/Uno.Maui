@@ -8,7 +8,7 @@ namespace Microsoft.Maui.Controls
 		[Obsolete("Use RefreshViewHandler.Mapper instead.")]
 		public static IPropertyMapper<IRefreshView, RefreshViewHandler> ControlsRefreshViewMapper = new PropertyMapper<RefreshView, RefreshViewHandler>(RefreshViewHandler.Mapper);
 
-		internal static new void RemapForControls()
+		public static new void RemapForControls()
 		{
 			// Adjust the mappings to preserve Controls.RefreshView legacy behaviors
 #if WINDOWS

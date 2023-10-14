@@ -29,7 +29,7 @@ namespace Microsoft.Maui.Controls.Xaml
 			Type = type;
 		}
 
-		internal static string GetResourceIdForType(Type type)
+		public static string GetResourceIdForType(Type type)
 		{
 			var assembly = type.Assembly;
 			foreach (var xria in assembly.GetCustomAttributes<XamlResourceIdAttribute>())
@@ -40,7 +40,7 @@ namespace Microsoft.Maui.Controls.Xaml
 			return null;
 		}
 
-		internal static string GetPathForType(Type type)
+		public static string GetPathForType(Type type)
 		{
 			var assembly = type.Assembly;
 			foreach (var xria in assembly.GetCustomAttributes<XamlResourceIdAttribute>())
@@ -51,7 +51,7 @@ namespace Microsoft.Maui.Controls.Xaml
 			return null;
 		}
 
-		internal static string GetResourceIdForPath(Assembly assembly, string path)
+		public static string GetResourceIdForPath(Assembly assembly, string path)
 		{
 			foreach (var xria in assembly.GetCustomAttributes<XamlResourceIdAttribute>())
 			{

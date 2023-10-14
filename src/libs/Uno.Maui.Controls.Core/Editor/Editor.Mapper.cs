@@ -9,7 +9,7 @@ namespace Microsoft.Maui.Controls
 		public static IPropertyMapper<IEditor, EditorHandler> ControlsEditorMapper =
 			new PropertyMapper<Editor, EditorHandler>(EditorHandler.Mapper);
 
-		internal static new void RemapForControls()
+		public static new void RemapForControls()
 		{
 			// Adjust the mappings to preserve Controls.Editor legacy behaviors
 #if WINDOWS

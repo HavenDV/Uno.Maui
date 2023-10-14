@@ -37,12 +37,12 @@ using Microsoft.Maui.Controls.Xaml.Internals;
 
 namespace Microsoft.Maui.Controls.Xaml
 {
-	static class TypeConversionExtensions
+	public static class TypeConversionExtensions
 	{
 		// caches both Type and MemberInfo keys to their corresponding TypeConverter
 		static readonly ConcurrentDictionary<MemberInfo, TypeConverter> s_converterCache = new();
 
-		internal static object ConvertTo(this object value, Type toType, Func<ParameterInfo> pinfoRetriever,
+		public static object ConvertTo(this object value, Type toType, Func<ParameterInfo> pinfoRetriever,
 			IServiceProvider serviceProvider, out Exception exception)
 		{
 			Func<TypeConverter> getConverter = () =>
@@ -59,7 +59,7 @@ namespace Microsoft.Maui.Controls.Xaml
 			return ConvertTo(value, toType, getConverter, serviceProvider, out exception);
 		}
 
-		internal static object ConvertTo(this object value, Type toType, Func<MemberInfo> minfoRetriever,
+		public static object ConvertTo(this object value, Type toType, Func<MemberInfo> minfoRetriever,
 			IServiceProvider serviceProvider, out Exception exception)
 		{
 			Func<TypeConverter> getConverter = () =>
@@ -139,7 +139,7 @@ namespace Microsoft.Maui.Controls.Xaml
 			return ret;
 		}
 
-		internal static object ConvertTo(this object value, Type toType, Func<TypeConverter> getConverter,
+		public static object ConvertTo(this object value, Type toType, Func<TypeConverter> getConverter,
 			IServiceProvider serviceProvider, out Exception exception)
 		{
 			exception = null;
@@ -263,7 +263,7 @@ namespace Microsoft.Maui.Controls.Xaml
 			return value;
 		}
 
-		internal static MethodInfo GetImplicitConversionOperator(this Type onType, Type fromType, Type toType)
+		public static MethodInfo GetImplicitConversionOperator(this Type onType, Type fromType, Type toType)
 		{
 			var bindingAttr = BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy;
 			IEnumerable<MethodInfo> mis = null;

@@ -8,7 +8,7 @@ namespace Microsoft.Maui.Controls
 		[Obsolete("Use PickerHandler.Mapper instead.")]
 		public static IPropertyMapper<IPicker, PickerHandler> ControlsPickerMapper = new PropertyMapper<Picker, PickerHandler>(PickerHandler.Mapper);
 
-		internal static new void RemapForControls()
+		public static new void RemapForControls()
 		{
 			// Adjust the mappings to preserve Controls.Picker legacy behaviors
 #if IOS

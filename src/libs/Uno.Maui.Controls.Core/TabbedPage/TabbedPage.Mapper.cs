@@ -10,7 +10,7 @@ namespace Microsoft.Maui.Controls
 		[Obsolete("Use TabbedViewHandler.Mapper instead.")]
 		public static IPropertyMapper<ITabbedView, ITabbedViewHandler> ControlsTabbedPageMapper = new PropertyMapper<TabbedPage, ITabbedViewHandler>(TabbedViewHandler.Mapper);
 
-		internal new static void RemapForControls()
+		public new static void RemapForControls()
 		{
 			TabbedViewHandler.Mapper.ReplaceMapping<TabbedPage, ITabbedViewHandler>(nameof(BarBackground), MapBarBackground);
 			TabbedViewHandler.Mapper.ReplaceMapping<TabbedPage, ITabbedViewHandler>(nameof(BarBackgroundColor), MapBarBackgroundColor);

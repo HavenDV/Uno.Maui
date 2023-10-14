@@ -8,7 +8,7 @@ namespace Microsoft.Maui.Controls
 		[Obsolete("Use DatePickerHandler.Mapper instead.")]
 		public static IPropertyMapper<IDatePicker, DatePickerHandler> ControlsDatePickerMapper = new PropertyMapper<DatePicker, DatePickerHandler>(DatePickerHandler.Mapper);
 
-		internal static new void RemapForControls()
+		public static new void RemapForControls()
 		{
 			// Adjust the mappings to preserve Controls.DatePicker legacy behaviors
 #if IOS

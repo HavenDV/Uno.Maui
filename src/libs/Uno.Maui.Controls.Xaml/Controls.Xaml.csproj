@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.1;netstandard2.0;$(_MauiDotNetTfm);$(MauiPlatforms)</TargetFrameworks>
+		<AssemblyName>Microsoft.Maui.Controls.Xaml</AssemblyName>
+		<RootNamespace>Microsoft.Maui.Controls.Xaml</RootNamespace>
+		<IsPackable>true</IsPackable>
+		<IsTrimmable>false</IsTrimmable>
+		<_MauiDesignDllBuild Condition=" '$(OS)' != 'Unix' ">True</_MauiDesignDllBuild>
+		<NoWarn>$(NoWarn);CA2200;CS1591;RS0041</NoWarn>
+		<PackageId>Microsoft.Maui.Controls.Xaml</PackageId>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="$(TargetFramework.Contains('-windows')) == true ">
+		<NoWarn>$(NoWarn);CA1416</NoWarn>
+		<DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Controls\src\Core\Controls.Core.csproj" />
+		<ProjectReference Include="..\..\..\Core\src\Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Condition=" '$(_MauiDesignDllBuild)' == 'True' and '$(TargetFramework)' == '$(_MauiDotNetTfm)'">
+		<ProjectReference Include="..\..\..\Controls\src\Xaml.Design\Controls.Xaml.Design.csproj" ReferenceOutputAssembly="false" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Configuration" />
+	</ItemGroup>
+
+	<PropertyGroup Condition=" '$(_MauiDesignDllBuild)' == 'True'">
+		<TargetsForTfmSpecificBuildOutput>
+			$(TargetsForTfmSpecificBuildOutput);
+			_MauiPackDesignAssemblies
+		</TargetsForTfmSpecificBuildOutput>
+	</PropertyGroup>
+
+	<Target Name="_MauiPackDesignAssemblies">
+		<ItemGroup>
+			<BuildOutputInPackage Include="..\Xaml.Design\bin\$(Configuration)\net472\Microsoft.Maui.Controls.Xaml.DesignTools.dll">
+				<TargetPath>Design\Microsoft.Maui.Controls.Xaml.DesignTools.dll</TargetPath>
+			</BuildOutputInPackage>
+			<BuildOutputInPackage Include="..\Xaml.Design\bin\$(Configuration)\net472\Microsoft.Maui.Controls.Xaml.DesignTools.pdb">
+				<TargetPath>Design\Microsoft.Maui.Controls.Xaml.DesignTools.pdb</TargetPath>
+			</BuildOutputInPackage>
+		</ItemGroup>
+	</Target>
+
+	<Import Project="$(MauiSrcDirectory)Workload\Shared\LibraryPacks.targets" />
+
+	<Import Project="$(MauiSrcDirectory)PublicAPI.targets" />
+
+</Project>

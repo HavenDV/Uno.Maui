@@ -8,7 +8,7 @@ namespace Microsoft.Maui.Controls
 		[Obsolete("Use WebViewHandler.Mapper instead.")]
 		public static IPropertyMapper<IWebView, WebViewHandler> ControlsWebViewMapper = new PropertyMapper<WebView, WebViewHandler>(WebViewHandler.Mapper);
 
-		internal static new void RemapForControls()
+		public static new void RemapForControls()
 		{
 			// Adjust the mappings to preserve Controls.WebView legacy behaviors
 #if ANDROID

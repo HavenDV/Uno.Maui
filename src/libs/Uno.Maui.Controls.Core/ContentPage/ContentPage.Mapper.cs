@@ -9,7 +9,7 @@ namespace Microsoft.Maui.Controls
 {
 	public partial class ContentPage
 	{
-		internal new static void RemapForControls()
+		public new static void RemapForControls()
 		{
 			PageHandler.Mapper.ReplaceMapping<ContentPage, IPageHandler>(nameof(ContentPage.HideSoftInputOnTapped), MapHideSoftInputOnTapped);
 		}

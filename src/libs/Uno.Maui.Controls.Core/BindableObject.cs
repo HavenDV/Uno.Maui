@@ -430,11 +430,11 @@ namespace Microsoft.Maui.Controls
 		void IDynamicResourceHandler.SetDynamicResource(BindableProperty property, string key)
 			=> SetDynamicResource(property, key, SetterSpecificity.DynamicResourceSetter);
 
-		internal void SetDynamicResource(BindableProperty property, string key)
+		public void SetDynamicResource(BindableProperty property, string key)
 			=> SetDynamicResource(property, key, SetterSpecificity.DynamicResourceSetter);
 
 		//FIXME, use specificity
-		internal void SetDynamicResource(BindableProperty property, string key, SetterSpecificity specificity)
+		public void SetDynamicResource(BindableProperty property, string key, SetterSpecificity specificity)
 		{
 			if (property == null)
 				throw new ArgumentNullException(nameof(property));

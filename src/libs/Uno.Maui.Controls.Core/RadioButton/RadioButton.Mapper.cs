@@ -12,7 +12,7 @@ namespace Microsoft.Maui.Controls
 		public static IPropertyMapper<RadioButton, RadioButtonHandler> ControlsRadioButtonMapper =
 			new PropertyMapper<RadioButton, RadioButtonHandler>(RadioButtonHandler.Mapper);
 
-		internal new static void RemapForControls()
+		public new static void RemapForControls()
 		{
 			RadioButtonHandler.Mapper.ReplaceMapping<RadioButton, IRadioButtonHandler>(nameof(IRadioButton.Content), MapContent);
 

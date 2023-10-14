@@ -8,7 +8,7 @@ using Microsoft.Maui.Controls.Xaml;
 [assembly: Dependency(typeof(ValueConverterProvider))]
 namespace Microsoft.Maui.Controls.Xaml
 {
-	class ValueConverterProvider : IValueConverterProvider
+	public class ValueConverterProvider : IValueConverterProvider
 	{
 		public object Convert(object value, Type toType, Func<MemberInfo> minfoRetriever, IServiceProvider serviceProvider)
 		{

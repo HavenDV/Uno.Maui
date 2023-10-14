@@ -17,7 +17,7 @@ namespace Microsoft.Maui.Controls
 		[Obsolete("Use ButtonHandler.Mapper instead.")]
 		public static IPropertyMapper<IButton, ButtonHandler> ControlsButtonMapper = new PropertyMapper<Button, ButtonHandler>(ButtonHandler.Mapper);
 
-		internal new static void RemapForControls()
+		public new static void RemapForControls()
 		{
 			ButtonHandler.Mapper.ReplaceMapping<Button, IButtonHandler>(nameof(ContentLayout), MapContentLayout);
 #if IOS

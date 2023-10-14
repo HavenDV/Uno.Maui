@@ -276,7 +276,7 @@ namespace Microsoft.Maui.Controls
 		public bool TryGetValue(string key, out object value)
 			=> TryGetValueAndSource(key, out value, out _);
 
-		internal bool TryGetValueAndSource(string key, out object value, out ResourceDictionary source)
+		public bool TryGetValueAndSource(string key, out object value, out ResourceDictionary source)
 		{
 			source = this;
 			return _innerDictionary.TryGetValue(key, out value)
@@ -400,7 +400,7 @@ namespace Microsoft.Maui.Controls
 				return uri;
 			}
 
-			internal static string GetResourcePath(Uri uri, string rootTargetPath)
+			public static string GetResourcePath(Uri uri, string rootTargetPath)
 			{
 				// GetResourcePathUriScheme is a fake scheme so it's not seen as file:// uri,
 				// and the forward slashes are valid on all plats

@@ -36,7 +36,7 @@ namespace Microsoft.Maui.Controls.Xaml
 		{
 		}
 
-		internal XamlParseException(string message, IServiceProvider serviceProvider, Exception innerException = null)
+		public  XamlParseException(string message, IServiceProvider serviceProvider, Exception innerException = null)
 			: this(message, GetLineInfo(serviceProvider), innerException)
 		{
 		}

@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace Microsoft.Maui.Controls.Xaml
 {
-	interface IValueConverterProvider
+	public interface IValueConverterProvider
 	{
 		object Convert(object value, Type toType, Func<MemberInfo> minfoRetriever, IServiceProvider serviceProvider);
 	}
