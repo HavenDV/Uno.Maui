@@ -360,7 +360,7 @@ namespace Microsoft.Maui.Platform
 			return null;
 		}
 
-		internal static T? GetChildAt<T>(this DependencyObject view, int index) where T : DependencyObject
+		internal static T? GetChildAt<T>(this DependencyObject view, int index) where T : class, DependencyObject
 		{
 			if (VisualTreeHelper.GetChildrenCount(view) >= index)
 				return null;

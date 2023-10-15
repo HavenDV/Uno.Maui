@@ -1,3 +1,4 @@
+using Windows.UI.Core;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Devices;
 using Microsoft.Maui.Hosting;
@@ -27,11 +28,11 @@ namespace Microsoft.Maui.LifecycleEvents
 				{
 					switch (args.WindowActivationState)
 					{
-						case UI.Xaml.WindowActivationState.CodeActivated:
-						case UI.Xaml.WindowActivationState.PointerActivated:
+						case CoreWindowActivationState.CodeActivated:
+						case CoreWindowActivationState.PointerActivated:
 							window.GetWindow()?.Activated();
 							break;
-						case UI.Xaml.WindowActivationState.Deactivated:
+						case CoreWindowActivationState.Deactivated:
 							window.GetWindow()?.Deactivated();
 							break;
 					}

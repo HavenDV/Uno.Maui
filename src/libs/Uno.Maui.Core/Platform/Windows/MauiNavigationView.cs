@@ -22,14 +22,14 @@ namespace Microsoft.Maui.Platform
 		internal ItemsRepeater? TopNavMenuItemsHost { get; private set; }
 		internal Grid? PaneContentGrid { get; private set; }
 		internal event EventHandler? OnApplyTemplateFinished;
-		internal SplitView? RootSplitView { get; private set; }
+		public SplitView? RootSplitView { get; private set; }
 		internal ScrollViewer? MenuItemsScrollViewer { get; private set; }
 		internal Grid? ContentPaneTopPadding { get; private set; }
 		internal Grid? PaneToggleButtonGrid { get; private set; }
 		internal Grid? ButtonHolderGrid { get; private set; }
 		internal Grid? ContentGrid { get; private set; }
 		internal Button? NavigationViewBackButton { get; private set; }
-		internal Button? TogglePaneButton { get; private set; }
+		public Button? TogglePaneButton { get; private set; }
 		internal Button? NavigationViewCloseButton { get; private set; }
 		internal ColumnDefinition? PaneHeaderCloseButtonColumn { get; private set; }
 		internal ColumnDefinition? PaneHeaderToggleButtonColumn { get; private set; }
@@ -155,7 +155,7 @@ namespace Microsoft.Maui.Platform
 			}
 		}
 
-		private protected virtual void OnApplyTemplateCore()
+		protected virtual void OnApplyTemplateCore()
 		{
 		}
 
@@ -280,13 +280,13 @@ namespace Microsoft.Maui.Platform
 			= DependencyProperty.Register(nameof(FlyoutCustomContent), typeof(UIElement), typeof(MauiNavigationView),
 				new PropertyMetadata(null, (d, _) => ((RootNavigationView)d).UpdateFlyoutCustomContent()));
 
-		internal UIElement? FlyoutCustomContent
+		public UIElement? FlyoutCustomContent
 		{
 			get => (UIElement?)GetValue(FlyoutCustomContentProperty);
 			set => SetValue(FlyoutCustomContentProperty, value);
 		}
 
-		protected private virtual void UpdateFlyoutCustomContent()
+		protected virtual void UpdateFlyoutCustomContent()
 		{
 			PaneCustomContent = FlyoutCustomContent;
 		}

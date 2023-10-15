@@ -38,7 +38,7 @@ namespace Microsoft.Maui
 		/// <inheritdoc/>
 		public IReadOnlyCollection<IWindowOverlayElement> WindowElements => _windowElements;
 
-		public PlatformView? GraphicsView => _graphicsView;
+		//public PlatformView? GraphicsView => _graphicsView;
 
 		/// <inheritdoc/>
 		public bool IsPlatformViewInitialized { get; private set; }

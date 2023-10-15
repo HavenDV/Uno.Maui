@@ -177,11 +177,13 @@ namespace Microsoft.Maui.Handlers
 				for (var i = 0; i < titleBarRects.Length; i++)
 				{
 					Rect rect = titleBarRects[i];
-					dragRects[i] = new RectInt32(
-					(int)(rect.X * density),
-					(int)(rect.Y * density),
-					(int)(rect.Width * density),
-					(int)(rect.Height * density));
+					dragRects[i] = new RectInt32
+					{
+						X = (int)(rect.X * density),
+						Y = (int)(rect.Y * density),
+						Width = (int)(rect.Width * density),
+						Height = (int)(rect.Height * density),
+					};
 				}
 
 				titleBar.SetDragRectangles(dragRects);

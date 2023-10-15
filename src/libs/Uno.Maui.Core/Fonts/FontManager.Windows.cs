@@ -4,7 +4,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using Microsoft.Extensions.Logging;
-using Microsoft.Graphics.Canvas.Text;
+//using Microsoft.Graphics.Canvas.Text;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Storage;
 using Microsoft.UI.Xaml.Media;
@@ -156,14 +156,14 @@ namespace Microsoft.Maui
 						fontUri = new Uri(uri, UriKind.RelativeOrAbsolute);
 				}
 
-				using (var fontSet = new CanvasFontSet(fontUri))
-				{
-					if (fontSet.Fonts.Count != 0)
-					{
-						var props = fontSet.GetPropertyValues(CanvasFontPropertyIdentifier.FamilyName);
-						return props.Length == 0 ? null : props[0].Value;
-					}
-				}
+				// using (var fontSet = new CanvasFontSet(fontUri))
+				// {
+				// 	if (fontSet.Fonts.Count != 0)
+				// 	{
+				// 		var props = fontSet.GetPropertyValues(CanvasFontPropertyIdentifier.FamilyName);
+				// 		return props.Length == 0 ? null : props[0].Value;
+				// 	}
+				// }
 
 				return null;
 			}

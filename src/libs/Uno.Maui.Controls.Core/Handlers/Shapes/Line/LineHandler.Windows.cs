@@ -1,7 +1,7 @@
 ﻿#nullable disable
 using Microsoft.Maui.Controls.Shapes;
-using Microsoft.Maui.Graphics.Platform;
-using Microsoft.Maui.Graphics.Win2D;
+// using Microsoft.Maui.Graphics.Platform;
+// using Microsoft.Maui.Graphics.Win2D;
 
 namespace Microsoft.Maui.Controls.Handlers
 {
@@ -9,22 +9,22 @@ namespace Microsoft.Maui.Controls.Handlers
 	{
 		public static void MapX1(IShapeViewHandler handler, Line line)
 		{
-			handler.PlatformView?.InvalidateShape(line);
+			//handler.PlatformView?.InvalidateShape(line);
 		}
 
 		public static void MapY1(IShapeViewHandler handler, Line line)
 		{
-			handler.PlatformView?.InvalidateShape(line);
+			//handler.PlatformView?.InvalidateShape(line);
 		}
 
 		public static void MapX2(IShapeViewHandler handler, Line line)
 		{
-			handler.PlatformView?.InvalidateShape(line);
+			//handler.PlatformView?.InvalidateShape(line);
 		}
 
 		public static void MapY2(IShapeViewHandler handler, Line line)
 		{
-			handler.PlatformView?.InvalidateShape(line);
+			//handler.PlatformView?.InvalidateShape(line);
 		}
 	}
 }

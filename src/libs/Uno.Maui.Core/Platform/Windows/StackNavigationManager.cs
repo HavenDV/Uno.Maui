@@ -20,7 +20,7 @@ namespace Microsoft.Maui.Platform
 		bool _connected;
 
 		protected NavigationRootManager WindowManager => _mauiContext.GetNavigationRootManager();
-		internal IStackNavigation? NavigationView { get; private set; }
+		public IStackNavigation? NavigationView { get; private set; }
 		public IReadOnlyList<IView> NavigationStack { get; set; } = new List<IView>();
 		public IMauiContext MauiContext => _mauiContext;
 		public IView CurrentPage

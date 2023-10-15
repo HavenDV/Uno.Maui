@@ -2081,7 +2081,7 @@ namespace Microsoft.Maui.Controls
 			get
 			{
 #if PLATFORM
-				bool isLoaded = (Handler as IPlatformViewHandler)?.PlatformView?.IsLoaded() == true;
+				bool isLoaded = (Handler as IPlatformViewHandler)?.PlatformView?.IsLoaded == true;
 #else
 				bool isLoaded = Window != null;
 #endif
@@ -2209,8 +2209,8 @@ namespace Microsoft.Maui.Controls
 					newWindow.HandlerChanged -= OnWindowHandlerChanged;
 
 #if PLATFORM
-				_loadedUnloadedToken?.Dispose();
-				_loadedUnloadedToken = null;
+				// _loadedUnloadedToken?.Dispose();
+				// _loadedUnloadedToken = null;
 #endif
 
 				_watchingPlatformLoaded = false;

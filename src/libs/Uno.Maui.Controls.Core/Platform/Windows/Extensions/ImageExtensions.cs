@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using Microsoft.Graphics.Canvas.UI.Xaml;
+//using Microsoft.Graphics.Canvas.UI.Xaml;
 using Microsoft.Maui.Controls.Internals;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -32,14 +32,14 @@ namespace Microsoft.Maui.Controls.Platform
 					Height = bitmap.PixelHeight
 				};
 			}
-			else if (source is CanvasImageSource canvas)
-			{
-				return new Graphics.Size
-				{
-					Width = canvas.Size.Width,
-					Height = canvas.Size.Height
-				};
-			}
+			// else if (source is CanvasImageSource canvas)
+			// {
+			// 	return new Graphics.Size
+			// 	{
+			// 		Width = canvas.Size.Width,
+			// 		Height = canvas.Size.Height
+			// 	};
+			// }
 
 			throw new InvalidCastException($"\"{source.GetType().FullName}\" is not supported.");
 		}

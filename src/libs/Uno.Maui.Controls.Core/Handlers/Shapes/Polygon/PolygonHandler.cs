@@ -12,12 +12,12 @@ namespace Microsoft.Maui.Controls.Handlers
 			[nameof(Polygon.FillRule)] = MapFillRule,
 		};
 
-		public PolygonHandler() : base(Mapper)
+		public PolygonHandler()// : base(Mapper)
 		{
 
 		}
 
-		public PolygonHandler(IPropertyMapper mapper) : base(mapper ?? Mapper)
+		public PolygonHandler(IPropertyMapper mapper)// : base(mapper ?? Mapper)
 		{
 
 		}

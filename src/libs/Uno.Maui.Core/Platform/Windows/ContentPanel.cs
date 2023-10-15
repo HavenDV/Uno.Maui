@@ -1,10 +1,10 @@
 ﻿#nullable enable
 using System;
 using System.Numerics;
-using Microsoft.Graphics.Canvas;
+//using Microsoft.Graphics.Canvas;
 using Microsoft.Maui.Graphics;
-using Microsoft.Maui.Graphics.Platform;
-using Microsoft.Maui.Graphics.Win2D;
+//using Microsoft.Maui.Graphics.Platform;
+//using Microsoft.Maui.Graphics.Win2D;
 using Microsoft.UI.Composition;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Hosting;
@@ -15,11 +15,11 @@ namespace Microsoft.Maui.Platform
 {
 	public class ContentPanel : MauiPanel
 	{
-		readonly Path? _borderPath;
+		readonly Microsoft.UI.Xaml.Shapes.Path? _borderPath;
 		IBorderStroke? _borderStroke;
 		FrameworkElement? _content;
 
-		internal Path? BorderPath => _borderPath;
+		internal Microsoft.UI.Xaml.Shapes.Path? BorderPath => _borderPath;
 
 		internal FrameworkElement? Content
 		{
@@ -49,7 +49,7 @@ namespace Microsoft.Maui.Platform
 
 		public ContentPanel()
 		{
-			_borderPath = new Path();
+			_borderPath = new Microsoft.UI.Xaml.Shapes.Path();
 			EnsureBorderPath();
 
 			SizeChanged += ContentPanelSizeChanged;
@@ -162,16 +162,16 @@ namespace Microsoft.Maui.Platform
 				IsInnerPath = false;
 			}
 
-			var device = CanvasDevice.GetSharedDevice();
-			var geometry = clipPath.AsPath(device);
-			var path = new CompositionPath(geometry);
-			var pathGeometry = compositor.CreatePathGeometry(path);
-			var geometricClip = compositor.CreateGeometricClip(pathGeometry);
-
-			// The clip needs to consider the content's offset in case it is in a different position because of a different alignment.
-			geometricClip.Offset = new Vector2(strokeThickness - Content.ActualOffset.X, strokeThickness - Content.ActualOffset.Y);
-
-			visual.Clip = geometricClip;
+			// var device = CanvasDevice.GetSharedDevice();
+			// var geometry = clipPath.AsPath(device);
+			// var path = new CompositionPath(geometry);
+			// var pathGeometry = compositor.CreatePathGeometry(path);
+			// var geometricClip = compositor.CreateGeometricClip(pathGeometry);
+			//
+			// // The clip needs to consider the content's offset in case it is in a different position because of a different alignment.
+			// geometricClip.Offset = new Vector2(strokeThickness - Content.ActualOffset.X, strokeThickness - Content.ActualOffset.Y);
+			//
+			// visual.Clip = geometricClip;
 		}
 	}
 }

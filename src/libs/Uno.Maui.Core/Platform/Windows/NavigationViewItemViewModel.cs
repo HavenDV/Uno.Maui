@@ -28,7 +28,7 @@ namespace Microsoft.Maui.Platform
 		}
 	}
 
-	internal static class NavigationViewItemViewModelExtensions
+	public static class NavigationViewItemViewModelExtensions
 	{
 		public static NavigationViewItemViewModel? GetWithData(this IEnumerable<NavigationViewItemViewModel> dest, object data)
 		{
@@ -75,7 +75,7 @@ namespace Microsoft.Maui.Platform
 		}
 	}
 
-	internal class NavigationViewItemViewModel : INotifyPropertyChanged
+	public class NavigationViewItemViewModel : INotifyPropertyChanged
 	{
 		public event PropertyChangedEventHandler? PropertyChanged;
 

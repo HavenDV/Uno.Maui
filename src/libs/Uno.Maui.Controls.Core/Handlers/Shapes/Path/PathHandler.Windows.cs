@@ -7,34 +7,34 @@ namespace Microsoft.Maui.Controls.Handlers
 {
 	public partial class PathHandler
 	{
-		public static void MapShape(IShapeViewHandler handler, Path path)
+		public static void MapShape(IShapeViewHandler handler, Microsoft.Maui.Controls.Shapes.Path path)
 		{
-			handler.PlatformView?.UpdatePath(path);
+			//handler.PlatformView?.UpdatePath(path);
 		}
 
-		public static void MapData(IShapeViewHandler handler, Path path)
+		public static void MapData(IShapeViewHandler handler, Microsoft.Maui.Controls.Shapes.Path path)
 		{
-			handler.PlatformView?.UpdatePath(path);
+			//handler.PlatformView?.UpdatePath(path);
 		}
 
-		public static void MapRenderTransform(IShapeViewHandler handler, Path path)
+		public static void MapRenderTransform(IShapeViewHandler handler, Microsoft.Maui.Controls.Shapes.Path path)
 		{
-			IDrawable drawable = handler.PlatformView?.Drawable;
-
-			if (drawable == null)
-				return;
-
-			if (drawable is ShapeDrawable shapeDrawable)
-			{
-				Matrix? matrix = path.RenderTransform?.Value;
-
-				if (matrix != null)
-				{
-					shapeDrawable.UpdateRenderTransform(matrix.Value.ToMatrix3X2());
-				}
-			}
-
-			handler.PlatformView?.InvalidateShape(path);
+			// IDrawable drawable = handler.PlatformView?.Drawable;
+			//
+			// if (drawable == null)
+			// 	return;
+			//
+			// if (drawable is ShapeDrawable shapeDrawable)
+			// {
+			// 	Matrix? matrix = path.RenderTransform?.Value;
+			//
+			// 	if (matrix != null)
+			// 	{
+			// 		shapeDrawable.UpdateRenderTransform(matrix.Value.ToMatrix3X2());
+			// 	}
+			// }
+			//
+			// handler.PlatformView?.InvalidateShape(path);
 		}
 	}
 }

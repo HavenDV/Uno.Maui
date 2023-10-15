@@ -8,14 +8,24 @@ using Microsoft.UI.Composition.SystemBackdrops;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml.Media;
 using Windows.Graphics;
+using Windows.UI.Core;
+using Microsoft.UI.Xaml;
 using ViewManagement = Windows.UI.ViewManagement;
 
 namespace Microsoft.Maui
 {
-	public class MauiWinUIWindow : UI.Xaml.Window, IPlatformSizeRestrictedWindow
+	public class MauiWinUIWindow : Window2, IPlatformSizeRestrictedWindow
 	{
-		static readonly SizeInt32 DefaultMinimumSize = new SizeInt32(0, 0);
-		static readonly SizeInt32 DefaultMaximumSize = new SizeInt32(int.MaxValue, int.MaxValue);
+		static readonly SizeInt32 DefaultMinimumSize = new SizeInt32
+		{
+			Width = 0,
+			Height = 0,
+		};
+		static readonly SizeInt32 DefaultMaximumSize = new SizeInt32
+		{
+			Width = int.MaxValue,
+			Height = int.MaxValue,
+		};
 
 		readonly WindowMessageManager _windowManager;
 
@@ -26,7 +36,7 @@ namespace Microsoft.Maui
 
 		public MauiWinUIWindow()
 		{
-			_windowManager = WindowMessageManager.Get(this);
+			_windowManager = WindowMessageManager.Get(this.UnoWindow);
 			_viewSettings = new ViewManagement.UISettings();
 
 			Activated += OnActivated;
@@ -38,7 +48,7 @@ namespace Microsoft.Maui
 			// and then we can react accordingly
 			if (AppWindowTitleBar.IsCustomizationSupported())
 			{
-				var titleBar = this.GetAppWindow()?.TitleBar;
+				var titleBar = this.UnoWindow.GetAppWindow()?.TitleBar;
 
 				if (titleBar is not null)
 				{
@@ -51,7 +61,7 @@ namespace Microsoft.Maui
 
 			if (MicaController.IsSupported())
 			{
-				base.SystemBackdrop = new MicaBackdrop() { Kind = MicaKind.BaseAlt };
+				//base.SystemBackdrop = new MicaBackdrop() { Kind = MicaKind.BaseAlt };
 			}
 
 			SubClassingWin32();
@@ -60,7 +70,7 @@ namespace Microsoft.Maui
 
 		protected virtual void OnActivated(object sender, UI.Xaml.WindowActivatedEventArgs args)
 		{
-			if (args.WindowActivationState != UI.Xaml.WindowActivationState.Deactivated)
+			if (args.WindowActivationState != CoreWindowActivationState.Deactivated)
 			{
 				// We have to track isActivated calls because WinUI will call OnActivated Twice
 				// when maximizing a window
@@ -71,7 +81,7 @@ namespace Microsoft.Maui
 				_isActivated = true;
 
 				if (_enableResumeEvent)
-					Services?.InvokeLifecycleEvents<WindowsLifecycle.OnResumed>(del => del(this));
+					Services?.InvokeLifecycleEvents<WindowsLifecycle.OnResumed>(del => del(this.UnoWindow));
 				else
 					_enableResumeEvent = true;
 			}
@@ -80,10 +90,10 @@ namespace Microsoft.Maui
 				_isActivated = false;
 			}
 
-			Services?.InvokeLifecycleEvents<WindowsLifecycle.OnActivated>(del => del(this, args));
+			Services?.InvokeLifecycleEvents<WindowsLifecycle.OnActivated>(del => del(this.UnoWindow, args));
 		}
 
-		private void OnClosedPrivate(object sender, UI.Xaml.WindowEventArgs args)
+		private void OnClosedPrivate(object sender, CoreWindowEventArgs args)
 		{
 			OnClosed(sender, args);
 
@@ -91,21 +101,21 @@ namespace Microsoft.Maui
 
 			if (_windowIcon != IntPtr.Zero)
 			{
-				DestroyIcon(_windowIcon);
+				//DestroyIcon(_windowIcon);
 				_windowIcon = IntPtr.Zero;
 			}
 
 			Window = null;
 		}
 
-		protected virtual void OnClosed(object sender, UI.Xaml.WindowEventArgs args)
+		protected virtual void OnClosed(object sender, CoreWindowEventArgs args)
 		{
-			Services?.InvokeLifecycleEvents<WindowsLifecycle.OnClosed>(del => del(this, args));
+			Services?.InvokeLifecycleEvents<WindowsLifecycle.OnClosed>(del => del(this.UnoWindow, args));
 		}
 
-		protected virtual void OnVisibilityChanged(object sender, UI.Xaml.WindowVisibilityChangedEventArgs args)
+		protected virtual void OnVisibilityChanged(object sender, VisibilityChangedEventArgs args)
 		{
-			Services?.InvokeLifecycleEvents<WindowsLifecycle.OnVisibilityChanged>(del => del(this, args));
+			Services?.InvokeLifecycleEvents<WindowsLifecycle.OnVisibilityChanged>(del => del(this.UnoWindow, args));
 		}
 
 		public IntPtr WindowHandle => _windowManager.WindowHandle;
@@ -113,7 +123,7 @@ namespace Microsoft.Maui
 		void SubClassingWin32()
 		{
 			Services?.InvokeLifecycleEvents<WindowsLifecycle.OnPlatformWindowSubclassed>(
-				del => del(this, new WindowsPlatformWindowSubclassedEventArgs(WindowHandle)));
+				del => del(this.UnoWindow, new WindowsPlatformWindowSubclassedEventArgs(WindowHandle)));
 
 			_windowManager.WindowMessage += OnWindowMessage;
 
@@ -125,8 +135,8 @@ namespace Microsoft.Maui
 					var minSize = win.MinimumSize;
 					var maxSize = win.MaximumSize;
 
-					var changedMinSize = minSize != DefaultMinimumSize;
-					var changedMaxSize = maxSize != DefaultMaximumSize;
+					var changedMinSize = minSize.Width != DefaultMinimumSize.Width || minSize.Height != DefaultMinimumSize.Height;
+					var changedMaxSize = maxSize.Width != DefaultMaximumSize.Width || maxSize.Height != DefaultMaximumSize.Height;
 
 					if (changedMinSize || changedMaxSize)
 					{
@@ -171,7 +181,7 @@ namespace Microsoft.Maui
 				}
 
 				Services?.InvokeLifecycleEvents<WindowsLifecycle.OnPlatformMessage>(
-					m => m.Invoke(this, new WindowsPlatformMessageEventArgs(e.Hwnd, e.MessageId, e.WParam, e.LParam)));
+					m => m.Invoke(this.UnoWindow, new WindowsPlatformMessageEventArgs(e.Hwnd, e.MessageId, e.WParam, e.LParam)));
 			}
 		}
 
@@ -186,15 +196,15 @@ namespace Microsoft.Maui
 			if (!string.IsNullOrEmpty(processPath))
 			{
 				var index = IntPtr.Zero; // 0 = first icon in resources
-				_windowIcon = ExtractAssociatedIcon(IntPtr.Zero, processPath, ref index);
-				if (_windowIcon != IntPtr.Zero)
+				//_windowIcon = ExtractAssociatedIcon(IntPtr.Zero, processPath, ref index);
+				//if (_windowIcon != IntPtr.Zero)
 				{
-					var appWindow = AppWindow.GetFromWindowId(Win32Interop.GetWindowIdFromWindow(WindowHandle));
-					if (appWindow is not null)
-					{
-						var iconId = Win32Interop.GetIconIdFromIcon(_windowIcon);
-						appWindow.SetIcon(iconId);
-					}
+					// var appWindow = AppWindow.GetFromWindowId(Win32Interop.GetWindowIdFromWindow(WindowHandle));
+					// if (appWindow is not null)
+					// {
+					// 	var iconId = Win32Interop.GetIconIdFromIcon(_windowIcon);
+					// 	appWindow.SetIcon(iconId);
+					// }
 				}
 			}
 		}
@@ -208,7 +218,7 @@ namespace Microsoft.Maui
 		{
 			if (AppWindowTitleBar.IsCustomizationSupported())
 			{
-				var titleBar = this.GetAppWindow()?.TitleBar;
+				var titleBar = this.UnoWindow.GetAppWindow()?.TitleBar;
 
 				if (titleBar is null)
 					return;

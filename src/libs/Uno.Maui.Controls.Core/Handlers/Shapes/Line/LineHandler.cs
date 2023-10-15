@@ -13,12 +13,12 @@ namespace Microsoft.Maui.Controls.Handlers
 			[nameof(Line.Y2)] = MapY2,
 		};
 
-		public LineHandler() : base(Mapper)
+		public LineHandler()// : base(Mapper)
 		{
 
 		}
 
-		public LineHandler(IPropertyMapper mapper) : base(mapper ?? Mapper)
+		public LineHandler(IPropertyMapper mapper)// : base(mapper ?? Mapper)
 		{
 
 		}

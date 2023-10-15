@@ -10,14 +10,14 @@ namespace Microsoft.Maui.Controls.Handlers
 			[nameof(RoundRectangle.CornerRadius)] = MapCornerRadius
 		};
 
-		public RoundRectangleHandler() : base(Mapper)
+		public RoundRectangleHandler()// : base(Mapper)
 		{
 
 		}
 
-		public RoundRectangleHandler(IPropertyMapper mapper) : base(mapper ?? Mapper)
-		{
-
-		}
+		// public RoundRectangleHandler(IPropertyMapper mapper) : base(mapper ?? Mapper)
+		// {
+		//
+		// }
 	}
 }

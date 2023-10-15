@@ -108,7 +108,7 @@ namespace Microsoft.Maui.Platform
 			}
 		}
 
-		internal static T? GetDescendantByName<T>(this DependencyObject parent, string elementName) where T : DependencyObject
+		internal static T? GetDescendantByName<T>(this DependencyObject parent, string elementName) where T : class, DependencyObject
 		{
 			var myChildrenCount = VisualTreeHelper.GetChildrenCount(parent);
 			for (int i = 0; i < myChildrenCount; i++)
@@ -123,7 +123,7 @@ namespace Microsoft.Maui.Platform
 			return null;
 		}
 
-		internal static T? GetFirstDescendant<T>(this DependencyObject element) where T : FrameworkElement
+		public static T? GetFirstDescendant<T>(this DependencyObject element) where T : FrameworkElement
 		{
 			var count = VisualTreeHelper.GetChildrenCount(element);
 			for (var i = 0; i < count; i++)
@@ -136,13 +136,13 @@ namespace Microsoft.Maui.Platform
 			return null;
 		}
 
-		internal static bool TryGetFirstDescendant<T>(this DependencyObject element, [NotNullWhen(true)] out T? result) where T : FrameworkElement
+		public static bool TryGetFirstDescendant<T>(this DependencyObject element, [NotNullWhen(true)] out T? result) where T : FrameworkElement
 		{
 			result = element.GetFirstDescendant<T>();
 			return result is not null;
 		}
 
-		internal static ResourceDictionary CloneResources(this FrameworkElement element)
+		public static ResourceDictionary CloneResources(this FrameworkElement element)
 		{
 			var rd = new ResourceDictionary();
 
@@ -191,7 +191,7 @@ namespace Microsoft.Maui.Platform
 			return foregroundProperty;
 		}
 
-		internal static IEnumerable<T?> GetChildren<T>(this DependencyObject parent) where T : DependencyObject
+		public static IEnumerable<T?> GetChildren<T>(this DependencyObject parent) where T : DependencyObject
 		{
 			int myChildrenCount = VisualTreeHelper.GetChildrenCount(parent);
 			for (int i = 0; i < myChildrenCount; i++)
@@ -276,7 +276,7 @@ namespace Microsoft.Maui.Platform
 		}
 
 
-		internal static void SetApplicationResource(this FrameworkElement frameworkElement, string propertyKey, object? value)
+		public static void SetApplicationResource(this FrameworkElement frameworkElement, string propertyKey, object? value)
 		{
 			if (value is null)
 			{
@@ -398,7 +398,7 @@ namespace Microsoft.Maui.Platform
 				return false;
 			}
 
-			inputPane = InputPaneInterop.GetForWindow(handleId);
+			inputPane = null;// InputPaneInterop.GetForWindow(handleId);
 			return true;
 		}
 	}

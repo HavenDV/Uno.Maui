@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Numerics;
 using System.Threading.Tasks;
-using Microsoft.Graphics.Canvas;
+//using Microsoft.Graphics.Canvas;
 using Microsoft.Maui.Graphics;
-using Microsoft.Maui.Graphics.Platform;
-using Microsoft.Maui.Graphics.Win2D;
+//using Microsoft.Maui.Graphics.Platform;
+//using Microsoft.Maui.Graphics.Win2D;
 using Microsoft.UI.Composition;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -22,14 +22,14 @@ namespace Microsoft.Maui.Platform
 		DropShadow? _dropShadow;
 		UI.Xaml.Shapes.Rectangle? _shadowHost;
 		WSize _shadowHostSize;
-		Path? _borderPath;
+		Microsoft.UI.Xaml.Shapes.Path? _borderPath;
 
 		FrameworkElement? _child;
 
 		public WrapperView()
 		{
 			_shadowCanvas = new Canvas();
-			_borderPath = new Path();
+			_borderPath = new Microsoft.UI.Xaml.Shapes.Path();
 
 			Children.Add(_shadowCanvas);
 			Children.Add(_borderPath);
@@ -92,14 +92,14 @@ namespace Microsoft.Maui.Platform
 
 			var pathSize = new Graphics.Rect(0, 0, width, height);
 			var clipPath = clipGeometry.PathForBounds(pathSize);
-			var device = CanvasDevice.GetSharedDevice();
-			var geometry = clipPath.AsPath(device);
-
-			var path = new CompositionPath(geometry);
-			var pathGeometry = compositor.CreatePathGeometry(path);
-			var geometricClip = compositor.CreateGeometricClip(pathGeometry);
-
-			visual.Clip = geometricClip;
+			// var device = CanvasDevice.GetSharedDevice();
+			// var geometry = clipPath.AsPath(device);
+			//
+			// var path = new CompositionPath(geometry);
+			// var pathGeometry = compositor.CreatePathGeometry(path);
+			// var geometricClip = compositor.CreateGeometricClip(pathGeometry);
+			//
+			// visual.Clip = geometricClip;
 		}
 
 		void DisposeClip()

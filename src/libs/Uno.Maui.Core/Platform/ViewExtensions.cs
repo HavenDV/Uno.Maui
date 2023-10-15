@@ -47,7 +47,7 @@ namespace Microsoft.Maui.Platform
 #if ANDROID
 			where T : class, ParentView
 #elif PLATFORM
-			where T : ParentView
+			where T : class
 #else
 			where T : class
 #endif
@@ -103,7 +103,7 @@ namespace Microsoft.Maui.Platform
 #if ANDROID
 			where T : class, ParentView
 #elif PLATFORM
-			where T : ParentView
+			where T : class
 #else
 			where T : class
 #endif

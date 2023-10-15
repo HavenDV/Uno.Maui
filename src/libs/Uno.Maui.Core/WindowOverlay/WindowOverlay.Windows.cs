@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.Maui.Graphics;
-using Microsoft.Maui.Graphics.Platform;
-using Microsoft.Maui.Graphics.Win2D;
+// using Microsoft.Maui.Graphics.Platform;
+// using Microsoft.Maui.Graphics.Win2D;
 using Microsoft.Maui.Handlers;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -10,7 +10,7 @@ namespace Microsoft.Maui
 {
 	public partial class WindowOverlay
 	{
-		W2DGraphicsView? _graphicsView;
+		//W2DGraphicsView? _graphicsView;
 		Frame? _frame;
 		WindowRootViewContainer? _panel;
 		FrameworkElement? _platformElement;
@@ -44,20 +44,20 @@ namespace Microsoft.Maui
 				_frame.Navigating += FrameNavigating;
 			}
 
-			_graphicsView = new W2DGraphicsView() { Drawable = this };
-			if (_graphicsView == null)
-				return false;
+			// _graphicsView = new W2DGraphicsView() { Drawable = this };
+			// if (_graphicsView == null)
+			// 	return false;
 
 			_platformElement.Tapped += ViewTapped;
 			_platformElement.PointerMoved += PointerMoved;
-			_graphicsView.Tapped += ViewTapped;
-			_graphicsView.PointerMoved += PointerMoved;
-
-			_graphicsView.SetValue(Canvas.ZIndexProperty, 99);
-			_graphicsView.IsHitTestVisible = false;
-			_graphicsView.Visibility = UI.Xaml.Visibility.Collapsed;
-
-			_panel.AddOverlay(_graphicsView);
+			// _graphicsView.Tapped += ViewTapped;
+			// _graphicsView.PointerMoved += PointerMoved;
+			//
+			// _graphicsView.SetValue(Canvas.ZIndexProperty, 99);
+			// _graphicsView.IsHitTestVisible = false;
+			// _graphicsView.Visibility = UI.Xaml.Visibility.Collapsed;
+			//
+			// _panel.AddOverlay(_graphicsView);
 
 			IsPlatformViewInitialized = true;
 			return IsPlatformViewInitialized;
@@ -66,13 +66,13 @@ namespace Microsoft.Maui
 		/// <inheritdoc/>
 		public void Invalidate()
 		{
-			if (_graphicsView is null)
-				return;
-
-			// Hide the visibility of the graphics view if there are no drawn elements.
-			// This way, the In-App Toolbar will work as expected.
-			_graphicsView.Visibility = WindowElements.Any() ? UI.Xaml.Visibility.Visible : UI.Xaml.Visibility.Collapsed;
-			_graphicsView.Invalidate();
+			// if (_graphicsView is null)
+			// 	return;
+			//
+			// // Hide the visibility of the graphics view if there are no drawn elements.
+			// // This way, the In-App Toolbar will work as expected.
+			// _graphicsView.Visibility = WindowElements.Any() ? UI.Xaml.Visibility.Visible : UI.Xaml.Visibility.Collapsed;
+			// _graphicsView.Invalidate();
 		}
 
 		/// <summary>
@@ -87,14 +87,14 @@ namespace Microsoft.Maui
 				_platformElement.Tapped -= ViewTapped;
 				_platformElement.PointerMoved -= PointerMoved;
 			}
-			if (_graphicsView != null)
-			{
-				_graphicsView.Tapped -= ViewTapped;
-				_graphicsView.PointerMoved -= PointerMoved;
-				if (_panel != null)
-					_panel.RemoveOverlay(_graphicsView);
-				_graphicsView = null;
-			}
+			// if (_graphicsView != null)
+			// {
+			// 	_graphicsView.Tapped -= ViewTapped;
+			// 	_graphicsView.PointerMoved -= PointerMoved;
+			// 	if (_panel != null)
+			// 		_panel.RemoveOverlay(_graphicsView);
+			// 	_graphicsView = null;
+			// }
 			IsPlatformViewInitialized = false;
 		}
 
@@ -106,14 +106,14 @@ namespace Microsoft.Maui
 			if (!_windowElements.Any())
 				return;
 
-			if (_graphicsView == null)
-				return;
+			// if (_graphicsView == null)
+			// 	return;
 
-			var pointerPoint = e.GetCurrentPoint(_graphicsView);
-			if (pointerPoint == null)
-				return;
+			// var pointerPoint = e.GetCurrentPoint(_graphicsView);
+			// if (pointerPoint == null)
+			// 	return;
 
-			_graphicsView.IsHitTestVisible = _windowElements.Any(n => n.Contains(new Point(pointerPoint.Position.X, pointerPoint.Position.Y)));
+			//_graphicsView.IsHitTestVisible = _windowElements.Any(n => n.Contains(new Point(pointerPoint.Position.X, pointerPoint.Position.Y)));
 		}
 
 		void FrameNavigating(object sender, UI.Xaml.Navigation.NavigatingCancelEventArgs e)
@@ -124,23 +124,23 @@ namespace Microsoft.Maui
 
 		void ViewTapped(object sender, UI.Xaml.Input.TappedRoutedEventArgs e)
 		{
-			if (e == null)
-				return;
-			var position = e.GetPosition(_graphicsView);
-			var point = new Point(position.X, position.Y);
-
-			if (DisableUITouchEventPassthrough)
-				e.Handled = true;
-			else if (EnableDrawableTouchHandling)
-				e.Handled = _windowElements.Any(n => n.Contains(point));
-
-			OnTappedInternal(point);
+			// if (e == null)
+			// 	return;
+			// var position = e.GetPosition(_graphicsView);
+			// var point = new Point(position.X, position.Y);
+			//
+			// if (DisableUITouchEventPassthrough)
+			// 	e.Handled = true;
+			// else if (EnableDrawableTouchHandling)
+			// 	e.Handled = _windowElements.Any(n => n.Contains(point));
+			//
+			// OnTappedInternal(point);
 		}
 
 		partial void OnDisableUITouchEventPassthroughSet()
 		{
-			if (_graphicsView != null)
-				_graphicsView.IsHitTestVisible = DisableUITouchEventPassthrough;
+			// if (_graphicsView != null)
+			// 	_graphicsView.IsHitTestVisible = DisableUITouchEventPassthrough;
 		}
 	}
 }

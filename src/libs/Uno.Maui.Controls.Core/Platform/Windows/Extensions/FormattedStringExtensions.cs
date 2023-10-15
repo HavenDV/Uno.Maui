@@ -49,7 +49,11 @@ namespace Microsoft.Maui.Controls.Platform
 
 				if (background != null || textColor != null)
 				{
-					TextHighlighter textHighlighter = new TextHighlighter { Ranges = { new TextRange(currentTextIndex, length) } };
+					TextHighlighter textHighlighter = new TextHighlighter { Ranges = { new TextRange
+					{
+						StartIndex = currentTextIndex,
+						Length = length,
+					} } };
 
 					if (background != null)
 					{

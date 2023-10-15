@@ -12,12 +12,12 @@ namespace Microsoft.Maui.Controls.Handlers
 			[nameof(Microsoft.Maui.Controls.Shapes.Path.RenderTransform)] = MapRenderTransform,
 		};
 
-		public PathHandler() : base(Mapper)
+		public PathHandler()//: base(Mapper)
 		{
 
 		}
 
-		public PathHandler(IPropertyMapper mapper) : base(mapper ?? Mapper)
+		public PathHandler(IPropertyMapper mapper)// : base(mapper ?? Mapper)
 		{
 
 		}

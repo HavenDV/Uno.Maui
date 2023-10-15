@@ -11,12 +11,12 @@ namespace Microsoft.Maui.Controls.Handlers
 			[nameof(Rectangle.RadiusY)] = MapRadiusY,
 		};
 
-		public RectangleHandler() : base(Mapper)
+		public RectangleHandler()// : base(Mapper)
 		{
 
 		}
 
-		public RectangleHandler(IPropertyMapper mapper) : base(mapper ?? Mapper)
+		public RectangleHandler(IPropertyMapper mapper)// : base(mapper ?? Mapper)
 		{
 
 		}

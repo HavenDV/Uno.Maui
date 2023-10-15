@@ -12,7 +12,7 @@ using PlatformWindow = Android.App.Activity;
 using PlatformApplication = Android.App.Application;
 #elif WINDOWS
 using PlatformView = Microsoft.UI.Xaml.FrameworkElement;
-using BasePlatformType = WinRT.IWinRTObject;
+//using BasePlatformType = WinRT.IWinRTObject;
 using PlatformWindow = Microsoft.UI.Xaml.Window;
 using PlatformApplication = Microsoft.UI.Xaml.Application;
 #elif TIZEN
@@ -135,35 +135,35 @@ namespace Microsoft.Maui.Platform
 
 		}
 
-		static void SetHandler(this BasePlatformType nativeElement, IElement element, IMauiContext context)
-		{
-			_ = nativeElement ?? throw new ArgumentNullException(nameof(nativeElement));
-			_ = element ?? throw new ArgumentNullException(nameof(element));
-			_ = context ?? throw new ArgumentNullException(nameof(context));
+		// static void SetHandler(this BasePlatformType nativeElement, IElement element, IMauiContext context)
+		// {
+		// 	_ = nativeElement ?? throw new ArgumentNullException(nameof(nativeElement));
+		// 	_ = element ?? throw new ArgumentNullException(nameof(element));
+		// 	_ = context ?? throw new ArgumentNullException(nameof(context));
+		//
+		// 	var handler = element.Handler;
+		// 	if (handler?.MauiContext != null && handler.MauiContext != context)
+		// 		handler = null;
+		//
+		// 	if (handler == null)
+		// 		handler = context.Handlers.GetHandler(element.GetType());
+		//
+		// 	if (handler == null)
+		// 		throw new Exception($"Handler not found for window {element}.");
+		//
+		// 	handler.SetMauiContext(context);
+		//
+		// 	element.Handler = handler;
+		//
+		// 	if (handler.VirtualView != element)
+		// 		handler.SetVirtualView(element);
+		// }
 
-			var handler = element.Handler;
-			if (handler?.MauiContext != null && handler.MauiContext != context)
-				handler = null;
-
-			if (handler == null)
-				handler = context.Handlers.GetHandler(element.GetType());
-
-			if (handler == null)
-				throw new Exception($"Handler not found for window {element}.");
-
-			handler.SetMauiContext(context);
-
-			element.Handler = handler;
-
-			if (handler.VirtualView != element)
-				handler.SetVirtualView(element);
-		}
-
-		public static void SetApplicationHandler(this PlatformApplication platformApplication, IApplication application, IMauiContext context) =>
-			SetHandler(platformApplication, application, context);
-
-		public static void SetWindowHandler(this PlatformWindow platformWindow, IWindow window, IMauiContext context) =>
-			SetHandler(platformWindow, window, context);
+		// public static void SetApplicationHandler(this PlatformApplication platformApplication, IApplication application, IMauiContext context) =>
+		// 	SetHandler(platformApplication, application, context);
+		//
+		// public static void SetWindowHandler(this PlatformWindow platformWindow, IWindow window, IMauiContext context) =>
+		// 	SetHandler(platformWindow, window, context);
 
 #if WINDOWS || IOS || ANDROID || TIZEN
 		internal static IWindow GetWindow(this IElement element) =>

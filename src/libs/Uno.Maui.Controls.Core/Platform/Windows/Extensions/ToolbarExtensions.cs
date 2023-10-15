@@ -79,10 +79,10 @@ namespace Microsoft.Maui.Controls.Platform
 
 		public static void UpdateToolbarDynamicOverflowEnabled(this MauiToolbar platformToolbar, Toolbar toolbar)
 		{
-			if (platformToolbar.CommandBar == null)
+			if (platformToolbar == null)
 				return;
 
-			platformToolbar.CommandBar.IsDynamicOverflowEnabled = toolbar.DynamicOverflowEnabled;
+			platformToolbar.IsDynamicOverflowEnabled = toolbar.DynamicOverflowEnabled;
 		}
 	}
 }

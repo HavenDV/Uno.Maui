@@ -1,8 +1,8 @@
 ﻿#nullable disable
 
 using System;
-using Microsoft.Graphics.Canvas;
-using Microsoft.Graphics.Canvas.UI.Composition;
+// using Microsoft.Graphics.Canvas;
+// using Microsoft.Graphics.Canvas.UI.Composition;
 using Microsoft.Graphics.DirectX;
 using Microsoft.UI.Composition;
 using Windows.Foundation;
@@ -24,8 +24,8 @@ namespace Microsoft.Maui.Platform
 
 		void CreateDevice(Compositor compositor)
 		{
-			_graphicsDevice = CanvasComposition.CreateCompositionGraphicsDevice(
-				compositor, CanvasDevice.GetSharedDevice());
+			// _graphicsDevice = CanvasComposition.CreateCompositionGraphicsDevice(
+			// 	compositor, CanvasDevice.GetSharedDevice());
 		}
 
 		void CreateDrawingSurface(global::Windows.Foundation.Size drawSize)
@@ -59,12 +59,12 @@ namespace Microsoft.Maui.Platform
 
 		void DrawSoftwareBitmap(SoftwareBitmap softwareBitmap, Size renderSize)
 		{
-			using (var drawingSession = CanvasComposition.CreateDrawingSession(_drawingSurface))
-			using (var bitmap = CanvasBitmap.CreateFromSoftwareBitmap(drawingSession.Device, softwareBitmap))
-			{
-				drawingSession.DrawImage(bitmap,
-					new Rect(0, 0, renderSize.Width, renderSize.Height));
-			}
+			// using (var drawingSession = CanvasComposition.CreateDrawingSession(_drawingSurface))
+			// using (var bitmap = CanvasBitmap.CreateFromSoftwareBitmap(drawingSession.Device, softwareBitmap))
+			// {
+			// 	drawingSession.DrawImage(bitmap,
+			// 		new Rect(0, 0, renderSize.Width, renderSize.Height));
+			// }
 		}
 
 		public void Dispose()

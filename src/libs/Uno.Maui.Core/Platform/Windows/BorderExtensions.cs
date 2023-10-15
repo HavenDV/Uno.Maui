@@ -9,12 +9,12 @@ namespace Microsoft.Maui.Platform
 {
 	public static class BorderExtensions
 	{
-		public static void UpdateBorderShape(this Path borderPath, IShape? borderShape, double width, double height)
+		public static void UpdateBorderShape(this Microsoft.UI.Xaml.Shapes.Path borderPath, IShape? borderShape, double width, double height)
 		{
 			borderPath.UpdatePath(borderShape, width, height);
 		}
 
-		internal static void UpdatePath(this Path borderPath, IShape? borderShape, double width, double height)
+		internal static void UpdatePath(this Microsoft.UI.Xaml.Shapes.Path borderPath, IShape? borderShape, double width, double height)
 		{
 			if (borderShape is null || width <= 0 || height <= 0)
 				return;
@@ -31,7 +31,7 @@ namespace Microsoft.Maui.Platform
 			}
 		}
 
-		public static void UpdateBackground(this Path borderPath, Paint? background)
+		public static void UpdateBackground(this Microsoft.UI.Xaml.Shapes.Path borderPath, Paint? background)
 		{
 			if (borderPath == null)
 				return;
@@ -39,7 +39,7 @@ namespace Microsoft.Maui.Platform
 			borderPath.Fill = background?.ToPlatform();
 		}
 
-		public static void UpdateStroke(this Path borderPath, Paint? borderBrush)
+		public static void UpdateStroke(this Microsoft.UI.Xaml.Shapes.Path borderPath, Paint? borderBrush)
 		{
 			if (borderPath == null)
 				return;
@@ -47,7 +47,7 @@ namespace Microsoft.Maui.Platform
 			borderPath.Stroke = borderBrush?.ToPlatform();
 		}
 
-		public static void UpdateStrokeThickness(this Path borderPath, double borderWidth)
+		public static void UpdateStrokeThickness(this Microsoft.UI.Xaml.Shapes.Path borderPath, double borderWidth)
 		{
 			if (borderPath == null)
 				return;
@@ -55,7 +55,7 @@ namespace Microsoft.Maui.Platform
 			borderPath.StrokeThickness = borderWidth;
 		}
 
-		public static void UpdateStrokeDashPattern(this Path borderPath, float[]? borderDashArray)
+		public static void UpdateStrokeDashPattern(this Microsoft.UI.Xaml.Shapes.Path borderPath, float[]? borderDashArray)
 		{
 			if (borderPath == null)
 				return;
@@ -78,7 +78,7 @@ namespace Microsoft.Maui.Platform
 			}
 		}
 
-		public static void UpdateBorderDashOffset(this Path borderPath, double borderDashOffset)
+		public static void UpdateBorderDashOffset(this Microsoft.UI.Xaml.Shapes.Path borderPath, double borderDashOffset)
 		{
 			if (borderPath == null)
 				return;
@@ -86,7 +86,7 @@ namespace Microsoft.Maui.Platform
 			borderPath.StrokeDashOffset = borderDashOffset;
 		}
 
-		public static void UpdateStrokeMiterLimit(this Path borderPath, double strokeMiterLimit)
+		public static void UpdateStrokeMiterLimit(this Microsoft.UI.Xaml.Shapes.Path borderPath, double strokeMiterLimit)
 		{
 			if (borderPath == null)
 				return;
@@ -94,7 +94,7 @@ namespace Microsoft.Maui.Platform
 			borderPath.StrokeMiterLimit = strokeMiterLimit;
 		}
 
-		public static void UpdateStrokeLineCap(this Path borderPath, LineCap strokeLineCap)
+		public static void UpdateStrokeLineCap(this Microsoft.UI.Xaml.Shapes.Path borderPath, LineCap strokeLineCap)
 		{
 			if (borderPath == null)
 				return;
@@ -117,7 +117,7 @@ namespace Microsoft.Maui.Platform
 			borderPath.StrokeStartLineCap = borderPath.StrokeEndLineCap = wLineCap;
 		}
 
-		public static void UpdateStrokeLineJoin(this Path borderPath, LineJoin strokeLineJoin)
+		public static void UpdateStrokeLineJoin(this Microsoft.UI.Xaml.Shapes.Path borderPath, LineJoin strokeLineJoin)
 		{
 			if (borderPath == null)
 				return;

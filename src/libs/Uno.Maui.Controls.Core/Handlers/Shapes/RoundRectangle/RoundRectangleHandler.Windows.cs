@@ -7,7 +7,7 @@ namespace Microsoft.Maui.Controls.Handlers
 	{
 		public static void MapCornerRadius(IShapeViewHandler handler, RoundRectangle roundRectangle)
 		{
-			handler.PlatformView?.InvalidateShape(roundRectangle);
+			//handler.PlatformView?.InvalidateShape(roundRectangle);
 		}
 	}
 }

@@ -1,7 +1,9 @@
 ﻿using System;
+using Windows.UI.Core;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
+using WindowActivatedEventArgs = Microsoft.UI.Xaml.WindowActivatedEventArgs;
 
 namespace Microsoft.Maui.Platform
 {
@@ -156,7 +158,7 @@ namespace Microsoft.Maui.Platform
 			SolidColorBrush defaultForegroundBrush = (SolidColorBrush)Application.Current.Resources["TextFillColorPrimaryBrush"];
 			SolidColorBrush inactiveForegroundBrush = (SolidColorBrush)Application.Current.Resources["TextFillColorDisabledBrush"];
 
-			if (e.WindowActivationState == WindowActivationState.Deactivated)
+			if (e.WindowActivationState == CoreWindowActivationState.Deactivated)
 			{
 				_rootView.WindowTitleForeground = inactiveForegroundBrush;
 			}

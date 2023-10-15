@@ -1,13 +1,13 @@
 using System;
-using Microsoft.Maui.Graphics.Platform;
-using Microsoft.Maui.Graphics.Win2D;
+// using Microsoft.Maui.Graphics.Platform;
+// using Microsoft.Maui.Graphics.Win2D;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Windows.Foundation;
 
 namespace Microsoft.Maui.Platform
 {
-	internal class WindowRootViewContainer : Panel
+	public class WindowRootViewContainer : Panel
 	{
 		FrameworkElement? _topPage;
 		protected override Size MeasureOverride(Size availableSize)

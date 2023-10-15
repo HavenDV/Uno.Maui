@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-<!--    <DefineConstants>$(DefineConstants);PLATFORM;WINDOWS</DefineConstants>-->
+    <DefineConstants>$(DefineConstants);PLATFORM;WINDOWS</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Label="Nuget">
@@ -47,7 +47,7 @@
     <_MauiTargetPlatformIsmacOS Condition="'$(_MauiTargetPlatformIdentifier)' == 'macos'">True</_MauiTargetPlatformIsmacOS>
     <_MauiTargetPlatformIstvOS>false</_MauiTargetPlatformIstvOS>
     <_MauiTargetPlatformIstvOS Condition="'$(_MauiTargetPlatformIdentifier)' == 'tvos'">True</_MauiTargetPlatformIstvOS>
-    <_MauiTargetPlatformIsWindows>false</_MauiTargetPlatformIsWindows>
+    <_MauiTargetPlatformIsWindows>true</_MauiTargetPlatformIsWindows>
     <_MauiTargetPlatformIsWindows Condition="$(_MauiTargetPlatformIdentifier.Contains('windows')) == 'True'">True</_MauiTargetPlatformIsWindows>
     <_MauiTargetPlatformIsTizen>false</_MauiTargetPlatformIsTizen>
     <_MauiTargetPlatformIsTizen Condition="'$(_MauiTargetPlatformIdentifier)' == 'tizen'">True</_MauiTargetPlatformIsTizen>
@@ -83,7 +83,7 @@
     <Compile Remove="**\Android\**\*.cs" />
     <None Include="**\Android\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
   </ItemGroup>
-  <ItemGroup Condition="'$(_MauiNoTargetPlatform)' != 'True'">
+  <ItemGroup>
     <Compile Remove="**\*.Standard.cs" />
     <None Include="**\*.Standard.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
     <Compile Remove="**\Standard\**\*.cs" />

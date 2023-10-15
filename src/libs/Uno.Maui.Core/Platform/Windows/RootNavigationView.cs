@@ -183,7 +183,7 @@ namespace Microsoft.Maui.Platform
 			UpdateToolbarPlacement();
 		}
 
-		private protected override void OnApplyTemplateCore()
+		protected override void OnApplyTemplateCore()
 		{
 			// We currently use the "PaneFooter" property to set custom content on the flyout
 			// But this content has a top margin of 4 to separate it from the bottom menu items
@@ -412,7 +412,7 @@ namespace Microsoft.Maui.Platform
 			}
 		}
 
-		private protected override void UpdateFlyoutCustomContent()
+		protected override void UpdateFlyoutCustomContent()
 		{
 			ReplacePaneMenuItemsWithCustomContent(FlyoutCustomContent as UIElement);
 		}

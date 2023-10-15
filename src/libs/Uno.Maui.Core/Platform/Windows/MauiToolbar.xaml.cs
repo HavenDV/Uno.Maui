@@ -6,7 +6,7 @@ using WImageSource = Microsoft.UI.Xaml.Media.ImageSource;
 
 namespace Microsoft.Maui.Platform
 {
-	public partial class MauiToolbar
+	public partial class MauiToolbar : CommandBar
 	{
 		public static readonly DependencyProperty IsBackButtonVisibleProperty
 			= DependencyProperty.Register(nameof(IsBackButtonVisible), typeof(NavigationViewBackButtonVisible), typeof(MauiToolbar),
@@ -24,103 +24,103 @@ namespace Microsoft.Maui.Platform
 
 		public MauiToolbar()
 		{
-			InitializeComponent();
-			titleIcon.Visibility = UI.Xaml.Visibility.Collapsed;
-			textBlockBorder.Visibility = UI.Xaml.Visibility.Collapsed;
-			menuContent.Visibility = UI.Xaml.Visibility.Collapsed;
-			titleView.Visibility = UI.Xaml.Visibility.Collapsed;
+			// InitializeComponent();
+			// titleIcon.Visibility = UI.Xaml.Visibility.Collapsed;
+			// textBlockBorder.Visibility = UI.Xaml.Visibility.Collapsed;
+			// menuContent.Visibility = UI.Xaml.Visibility.Collapsed;
+			// titleView.Visibility = UI.Xaml.Visibility.Collapsed;
 		}
 
-		internal string? Title
-		{
-			get => title.Text;
-			set
-			{
-				title.Text = value;
+		internal string? Title { get; set; }
+		// {
+		// 	get => title.Text;
+		// 	set
+		// 	{
+		// 		title.Text = value;
+		//
+		// 		if (!string.IsNullOrWhiteSpace(value))
+		// 			textBlockBorder.Visibility = UI.Xaml.Visibility.Visible;
+		// 		else
+		// 			textBlockBorder.Visibility = UI.Xaml.Visibility.Collapsed;
+		// 	}
+		// }
 
-				if (!string.IsNullOrWhiteSpace(value))
-					textBlockBorder.Visibility = UI.Xaml.Visibility.Visible;
-				else
-					textBlockBorder.Visibility = UI.Xaml.Visibility.Collapsed;
-			}
-		}
+		internal WImage? TitleIconImage { get; set; }
+		// {
+		// 	get => titleIcon;
+		// }
 
-		internal WImage? TitleIconImage
-		{
-			get => titleIcon;
-		}
+		internal WImageSource? TitleIconImageSource { get; set; }
+		// {
+		// 	get => titleIcon.Source;
+		// 	set
+		// 	{
+		// 		titleIcon.Source = value;
+		//
+		// 		if (value != null)
+		// 			titleIcon.Visibility = UI.Xaml.Visibility.Visible;
+		// 		else
+		// 			titleIcon.Visibility = UI.Xaml.Visibility.Collapsed;
+		// 	}
+		// }
 
-		internal WImageSource? TitleIconImageSource
-		{
-			get => titleIcon.Source;
-			set
-			{
-				titleIcon.Source = value;
+		internal UI.Xaml.Thickness TitleViewMargin { get; set; }
+		// {
+		// 	get => titleView.Margin;
+		// 	set => titleView.Margin = value;
+		// }
 
-				if (value != null)
-					titleIcon.Visibility = UI.Xaml.Visibility.Visible;
-				else
-					titleIcon.Visibility = UI.Xaml.Visibility.Collapsed;
-			}
-		}
-
-		internal UI.Xaml.Thickness TitleViewMargin
-		{
-			get => titleView.Margin;
-			set => titleView.Margin = value;
-		}
-
-		internal object? TitleView
-		{
-			get => titleView.Content;
-			set
-			{
-				titleView.Content = value;
-
-				if (value != null)
-					titleView.Visibility = UI.Xaml.Visibility.Visible;
-				else
-					titleView.Visibility = UI.Xaml.Visibility.Collapsed;
-			}
-		}
+		internal object? TitleView { get; set; }
+		// {
+		// 	get => titleView.Content;
+		// 	set
+		// 	{
+		// 		titleView.Content = value;
+		//
+		// 		if (value != null)
+		// 			titleView.Visibility = UI.Xaml.Visibility.Visible;
+		// 		else
+		// 			titleView.Visibility = UI.Xaml.Visibility.Collapsed;
+		// 	}
+		// }
 
 		internal void SetBarTextColor(WBrush? brush)
 		{
-			if (brush != null)
-			{
-				title.Foreground = brush;
-			}
+			// if (brush != null)
+			// {
+			// 	title.Foreground = brush;
+			// }
 
 			_menuBarForeground = brush;
 			UpdateMenuBarForeground();
 		}
 
-		internal CommandBar CommandBar => commandBar;
+		//internal CommandBar CommandBar => commandBar;
 
 
-		internal UI.Xaml.Thickness ContentGridMargin
-		{
-			get => contentGrid.Margin;
-			set => contentGrid.Margin = value;
-		}
+		internal UI.Xaml.Thickness ContentGridMargin { get; set; }
+		// {
+		// 	get => contentGrid.Margin;
+		// 	set => contentGrid.Margin = value;
+		// }
 
-		internal VerticalAlignment TextBlockBorderVerticalAlignment
-		{
-			get => textBlockBorder.VerticalAlignment;
-			set => textBlockBorder.VerticalAlignment = value;
-		}
+		internal VerticalAlignment TextBlockBorderVerticalAlignment { get; set; }
+		// {
+		// 	get => textBlockBorder.VerticalAlignment;
+		// 	set => textBlockBorder.VerticalAlignment = value;
+		// }
 
-		public NavigationViewBackButtonVisible IsBackButtonVisible
-		{
-			get => (NavigationViewBackButtonVisible)GetValue(IsBackButtonVisibleProperty);
-			set => SetValue(IsBackButtonVisibleProperty, value);
-		}
+		public NavigationViewBackButtonVisible IsBackButtonVisible { get; set; }
+		// {
+		// 	get => (NavigationViewBackButtonVisible)GetValue(IsBackButtonVisibleProperty);
+		// 	set => SetValue(IsBackButtonVisibleProperty, value);
+		// }
 
-		public bool IsBackEnabled
-		{
-			get => (bool)GetValue(IsBackEnabledProperty);
-			set => SetValue(IsBackEnabledProperty, value);
-		}
+		public bool IsBackEnabled { get; set; }
+//		{
+//			get => (bool)GetValue(IsBackEnabledProperty);
+//			set => SetValue(IsBackEnabledProperty, value);
+//		}
 		internal Button? NavigationViewBackButton
 		{
 			get => _navigationViewBackButton;
@@ -186,13 +186,13 @@ namespace Microsoft.Maui.Platform
 		{
 			_menuBar = menuBar;
 
-			menuContent.Content = _menuBar;
+			//menuContent.Content = _menuBar;
 			UpdateMenuBarForeground();
 
-			if (_menuBar == null || _menuBar.Items.Count == 0)
-				menuContent.Visibility = UI.Xaml.Visibility.Collapsed;
-			else
-				menuContent.Visibility = UI.Xaml.Visibility.Visible;
+			// if (_menuBar == null || _menuBar.Items.Count == 0)
+			// 	menuContent.Visibility = UI.Xaml.Visibility.Collapsed;
+			// else
+			// 	menuContent.Visibility = UI.Xaml.Visibility.Visible;
 		}
 
 		void UpdateMenuBarForeground()

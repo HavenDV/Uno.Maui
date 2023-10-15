@@ -1,9 +1,11 @@
-﻿#if __IOS__ || MACCATALYST
+﻿using Microsoft.Maui.Graphics;
+
+#if __IOS__ || MACCATALYST
 using PlatformView = Microsoft.Maui.Platform.MauiShapeView;
 #elif MONOANDROID
 using PlatformView = Microsoft.Maui.Platform.MauiShapeView;
 #elif WINDOWS
-using PlatformView = Microsoft.Maui.Graphics.Win2D.W2DGraphicsView;
+//using PlatformView = Microsoft.Maui.Graphics.Win2D.W2DGraphicsView;
 #elif TIZEN
 using PlatformView = Microsoft.Maui.Platform.MauiShapeView;
 #elif (NETSTANDARD || !PLATFORM) || (NET6_0_OR_GREATER && !IOS && !ANDROID && !TIZEN)
@@ -17,39 +19,85 @@ namespace Microsoft.Maui.Handlers
 	{
 		public static IPropertyMapper<IShapeView, IShapeViewHandler> Mapper = new PropertyMapper<IShapeView, IShapeViewHandler>(ViewHandler.ViewMapper)
 		{
-			[nameof(IShapeView.Background)] = MapBackground,
-			[nameof(IShapeView.Shape)] = MapShape,
-			[nameof(IShapeView.Aspect)] = MapAspect,
-			[nameof(IShapeView.Fill)] = MapFill,
-			[nameof(IShapeView.Stroke)] = MapStroke,
-			[nameof(IShapeView.StrokeThickness)] = MapStrokeThickness,
-			[nameof(IShapeView.StrokeDashPattern)] = MapStrokeDashPattern,
-			[nameof(IShapeView.StrokeDashOffset)] = MapStrokeDashOffset,
-			[nameof(IShapeView.StrokeLineCap)] = MapStrokeLineCap,
-			[nameof(IShapeView.StrokeLineJoin)] = MapStrokeLineJoin,
-			[nameof(IShapeView.StrokeMiterLimit)] = MapStrokeMiterLimit
+			// [nameof(IShapeView.Background)] = MapBackground,
+			// [nameof(IShapeView.Shape)] = MapShape,
+			// [nameof(IShapeView.Aspect)] = MapAspect,
+			// [nameof(IShapeView.Fill)] = MapFill,
+			// [nameof(IShapeView.Stroke)] = MapStroke,
+			// [nameof(IShapeView.StrokeThickness)] = MapStrokeThickness,
+			// [nameof(IShapeView.StrokeDashPattern)] = MapStrokeDashPattern,
+			// [nameof(IShapeView.StrokeDashOffset)] = MapStrokeDashOffset,
+			// [nameof(IShapeView.StrokeLineCap)] = MapStrokeLineCap,
+			// [nameof(IShapeView.StrokeLineJoin)] = MapStrokeLineJoin,
+			// [nameof(IShapeView.StrokeMiterLimit)] = MapStrokeMiterLimit
 		};
 
-		public static CommandMapper<IShapeView, IShapeViewHandler> CommandMapper = new(ViewCommandMapper)
+		public static CommandMapper<IShapeView, IShapeViewHandler> CommandMapper = new()
 		{
 		};
 
-		public ShapeViewHandler() : base(Mapper, CommandMapper)
+		public ShapeViewHandler()// : base(Mapper, CommandMapper)
 		{
 		}
 
-		public ShapeViewHandler(IPropertyMapper? mapper)
-			: base(mapper ?? Mapper, CommandMapper)
+		// public ShapeViewHandler(IPropertyMapper? mapper)
+		// 	: base(mapper ?? Mapper, CommandMapper)
+		// {
+		// }
+		//
+		// public ShapeViewHandler(IPropertyMapper? mapper, CommandMapper? commandMapper)
+		// 	: base(mapper ?? Mapper, commandMapper ?? CommandMapper)
+		// {
+		// }
+		//
+		// IShapeView IShapeViewHandler.VirtualView => VirtualView;
+
+		//PlatformView IShapeViewHandler.PlatformView => PlatformView;
+		public void SetMauiContext(IMauiContext mauiContext)
 		{
+			throw new NotImplementedException();
 		}
 
-		public ShapeViewHandler(IPropertyMapper? mapper, CommandMapper? commandMapper)
-			: base(mapper ?? Mapper, commandMapper ?? CommandMapper)
+		public void SetVirtualView(IElement view)
 		{
+			throw new NotImplementedException();
 		}
 
-		IShapeView IShapeViewHandler.VirtualView => VirtualView;
+		public void UpdateValue(string property)
+		{
+			throw new NotImplementedException();
+		}
 
-		PlatformView IShapeViewHandler.PlatformView => PlatformView;
+		public void Invoke(string command, object? args = null)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void DisconnectHandler()
+		{
+			throw new NotImplementedException();
+		}
+
+		public object? PlatformView { get; }
+		public IShapeView VirtualView { get; }
+
+		IView? IViewHandler.VirtualView => VirtualView;
+
+		public Size GetDesiredSize(double widthConstraint, double heightConstraint)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void PlatformArrange(Rect frame)
+		{
+			throw new NotImplementedException();
+		}
+
+		public bool HasContainer { get; set; }
+		public object? ContainerView { get; }
+
+		IElement? IElementHandler.VirtualView => VirtualView;
+
+		public IMauiContext? MauiContext { get; }
 	}
 }

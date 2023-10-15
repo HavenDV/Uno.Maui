@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Windows.UI.Core;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.Web.WebView2.Core;
@@ -45,7 +46,7 @@ namespace Microsoft.Maui.Handlers
 			_window.Closed += OnWindowClosed;
 		}
 
-		private void OnWindowClosed(object sender, WindowEventArgs args)
+		private void OnWindowClosed(object sender, CoreWindowEventArgs args)
 		{
 			Disconnect(PlatformView);
 		}

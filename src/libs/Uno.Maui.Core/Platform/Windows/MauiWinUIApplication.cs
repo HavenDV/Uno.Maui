@@ -41,7 +41,7 @@ namespace Microsoft.Maui
 
 			_application = _services.GetRequiredService<IApplication>();
 
-			this.SetApplicationHandler(_application, applicationContext);
+			//this.SetApplicationHandler(_application, applicationContext);
 
 			this.CreatePlatformWindow(_application, args);
 

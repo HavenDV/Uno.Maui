@@ -76,11 +76,13 @@ namespace Microsoft.Maui.Platform
 				? Math.Round(y * density)
 				: currPos.Y;
 
-			var pos = new PointInt32(
-				(int)x,
-				(int)y);
+			var pos = new PointInt32
+				{
+					X = (int)x,
+					Y = (int)y,
+				};
 
-			if (pos != currPos)
+			if (pos.X != currPos.X || pos.Y != currPos.Y)
 				appWindow.Move(pos);
 		}
 
@@ -108,11 +110,13 @@ namespace Microsoft.Maui.Platform
 				? Math.Round(height * density)
 				: currSize.Height;
 
-			var size = new SizeInt32(
-				(int)width,
-				(int)height);
+			var size = new SizeInt32
+				{
+					Width = (int)width,
+					Height = (int)height,
+				};
 
-			if (size != currSize)
+			if (size.Width != currSize.Width || size.Height != currSize.Height)
 				appWindow.Resize(size);
 		}
 
@@ -124,8 +128,8 @@ namespace Microsoft.Maui.Platform
 
 		public static void UpdateMinimumSize(this UI.Xaml.Window platformWindow, IWindow window)
 		{
-			if (platformWindow is not IPlatformSizeRestrictedWindow restrictedWindow)
-				return;
+			// if (platformWindow is not IPlatformSizeRestrictedWindow restrictedWindow)
+			// 	return;
 
 			var density = platformWindow.GetDisplayDensity();
 			var minWidth = window.MinimumWidth;
@@ -139,11 +143,13 @@ namespace Microsoft.Maui.Platform
 				? (int)Math.Clamp(minHeight * density, 0, int.MaxValue)
 				: 0;
 
-			var minSize = new SizeInt32(
-				actualMinWidth,
-				actualMinHeight);
+			var minSize = new SizeInt32
+			{
+				Width = actualMinWidth,
+				Height = actualMinHeight,
+			};
 
-			restrictedWindow.MinimumSize = minSize;
+			// restrictedWindow.MinimumSize = minSize;
 
 			var appWindow = platformWindow.GetAppWindow();
 			if (appWindow is null)
@@ -155,7 +161,7 @@ namespace Microsoft.Maui.Platform
 				temp.Width = actualMinWidth;
 			if (currentSize.Height < actualMinHeight)
 				temp.Height = actualMinHeight;
-			if (currentSize != temp)
+			if (currentSize.Width != temp.Width || currentSize.Height != currentSize.Height)
 				appWindow.Resize(temp);
 		}
 
@@ -167,8 +173,8 @@ namespace Microsoft.Maui.Platform
 
 		public static void UpdateMaximumSize(this UI.Xaml.Window platformWindow, IWindow window)
 		{
-			if (platformWindow is not IPlatformSizeRestrictedWindow restrictedWindow)
-				return;
+			// if (platformWindow is not IPlatformSizeRestrictedWindow restrictedWindow)
+			// 	return;
 
 			var density = platformWindow.GetDisplayDensity();
 			var maxWidth = window.MaximumWidth;
@@ -182,11 +188,13 @@ namespace Microsoft.Maui.Platform
 				? (int)Math.Clamp(maxHeight * density, 0, int.MaxValue)
 				: int.MaxValue;
 
-			var MaxSize = new SizeInt32(
-				actualMaxWidth,
-				actualMaxHeight);
+			var MaxSize = new SizeInt32
+			{
+				Width = actualMaxWidth,
+				Height = actualMaxHeight,
+			};
 
-			restrictedWindow.MaximumSize = MaxSize;
+			//restrictedWindow.MaximumSize = MaxSize;
 
 			var appWindow = platformWindow.GetAppWindow();
 			if (appWindow is null)
@@ -198,7 +206,7 @@ namespace Microsoft.Maui.Platform
 				temp.Width = actualMaxWidth;
 			if (currentSize.Height > actualMaxHeight)
 				temp.Height = actualMaxHeight;
-			if (currentSize != temp)
+			if (currentSize.Width != temp.Width || currentSize.Height != temp.Height)
 				appWindow.Resize(temp);
 		}
 
@@ -210,8 +218,8 @@ namespace Microsoft.Maui.Platform
 					return window;
 			}
 
-			if (platformWindow is MauiWinUIWindow mauiWindow)
-				return mauiWindow?.Window;
+			// if (platformWindow is MauiWinUIWindow mauiWindow)
+			// 	return mauiWindow?.Window;
 
 			return null;
 		}
@@ -266,8 +274,8 @@ namespace Microsoft.Maui.Platform
 			if (hwnd == IntPtr.Zero)
 				return null;
 
-			var windowId = UI.Win32Interop.GetWindowIdFromWindow(hwnd);
-			return UI.Windowing.AppWindow.GetFromWindowId(windowId);
+			//var windowId = UI.Win32Interop.GetWindowIdFromWindow(hwnd);
+			return UI.Windowing.AppWindow.Create();
 		}
 
 		public static DisplayOrientation GetOrientation(this IWindow? window)

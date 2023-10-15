@@ -12,12 +12,12 @@ namespace Microsoft.Maui.Controls.Handlers
 			[nameof(Polyline.FillRule)] = MapFillRule,
 		};
 
-		public PolylineHandler() : base(Mapper)
+		public PolylineHandler()// : base(Mapper)
 		{
 
 		}
 
-		public PolylineHandler(IPropertyMapper mapper) : base(mapper ?? Mapper)
+		public PolylineHandler(IPropertyMapper mapper)// : base(mapper ?? Mapper)
 		{
 
 		}

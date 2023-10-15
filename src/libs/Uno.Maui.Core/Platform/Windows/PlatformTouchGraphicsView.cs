@@ -1,6 +1,6 @@
 ﻿using Microsoft.Maui.Graphics;
-using Microsoft.Maui.Graphics.Platform;
-using Microsoft.Maui.Graphics.Win2D;
+// using Microsoft.Maui.Graphics.Platform;
+// using Microsoft.Maui.Graphics.Win2D;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
 
@@ -9,7 +9,7 @@ namespace Microsoft.Maui.Platform
 	public class PlatformTouchGraphicsView : UserControl
 	{
 		IGraphicsView? _graphicsView;
-		readonly W2DGraphicsView _platformGraphicsView;
+		//readonly W2DGraphicsView _platformGraphicsView;
 		bool _isTouching;
 		bool _isInBounds;
 
@@ -17,17 +17,20 @@ namespace Microsoft.Maui.Platform
 		{
 			ManipulationMode = ManipulationModes.All;
 
-			Content = _platformGraphicsView = new W2DGraphicsView();
+			//Content = _platformGraphicsView = new W2DGraphicsView();
 		}
 
 		public void UpdateDrawable(IGraphicsView graphicsView)
 		{
-			_platformGraphicsView.UpdateDrawable(graphicsView);
+			//_platformGraphicsView.UpdateDrawable(graphicsView);
 			_graphicsView = graphicsView;
 		}
 
-		public void Invalidate() => _platformGraphicsView.Invalidate();
-
+		public void Invalidate() // => _platformGraphicsView.Invalidate();
+		{
+			
+		}
+		
 		PointF[] GetViewPoints(PointerRoutedEventArgs e)
 		{
 			var point = e.GetCurrentPoint(this).Position;

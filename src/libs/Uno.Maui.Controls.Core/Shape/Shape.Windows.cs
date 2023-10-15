@@ -12,7 +12,7 @@ namespace Microsoft.Maui.Controls.Shapes
 	{
 		public static void MapStrokeDashArray(IShapeViewHandler handler, IShapeView shapeView)
 		{
-			handler.PlatformView?.InvalidateShape(shapeView);
+			//handler.PlatformView?.InvalidateShape(shapeView);
 		}
 	}
 }

@@ -46,7 +46,7 @@ namespace Microsoft.Maui.Controls.Platform
 			UpdateFlyoutBackdrop();
 		}
 
-		private protected override void UpdateFlyoutCustomContent()
+		protected override void UpdateFlyoutCustomContent()
 		{
 			base.UpdateFlyoutCustomContent();
 
@@ -67,7 +67,7 @@ namespace Microsoft.Maui.Controls.Platform
 
 		internal Shell Element { get; set; }
 
-		private protected override void OnApplyTemplateCore()
+		protected override void OnApplyTemplateCore()
 		{
 			_shellSplitView = new ShellSplitView(RootSplitView);
 			_shellSplitView.FlyoutBackdrop = _flyoutBackdrop;
