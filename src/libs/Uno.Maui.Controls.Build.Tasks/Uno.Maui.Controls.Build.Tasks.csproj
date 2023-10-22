@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <!--    <DefineConstants>$(DefineConstants);PLATFORM;WINDOWS</DefineConstants>-->
+    </PropertyGroup>
+
+    <PropertyGroup Label="Nuget">
+        <PackageId>H.Uno.Maui.Controls.Build.Tasks</PackageId>
+        <Description>Controls Build Tasks MAUI package for Uno platforms</Description>
+        <PackageTags>uno;maui;build;tasks;controls;gtk;linux;skia;wpf;webassembly;wasm;platforms;uno-platform</PackageTags>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Mono.Cecil" Version="0.11.5" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="System.CodeDom" Version="7.0.0" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="Microsoft.Build" Version="15.9.20" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.Build.Framework" Version="15.9.20" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.Build.Utilities.Core" Version="15.9.20" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.Build.Tasks.Core" Version="15.9.20" PrivateAssets="all" />
+    </ItemGroup>
+
+</Project>

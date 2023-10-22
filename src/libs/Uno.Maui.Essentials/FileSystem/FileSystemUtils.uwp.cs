@@ -31,7 +31,7 @@ namespace Microsoft.Maui.Storage
 			return Path.Combine(root, filename);
 		}
 
-		public static bool TryGetAppPackageFileUri(string filename, [NotNullWhen(true)] out string? uri)
+		public static bool TryGetAppPackageFileUri(string filename, out string? uri)
 		{
 			var path = PlatformGetFullAppPackageFilePath(filename);
 

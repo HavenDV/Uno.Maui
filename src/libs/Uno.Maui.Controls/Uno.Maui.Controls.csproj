@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup Label="Nuget">
+		<PackageId>H.Uno.Maui.Controls</PackageId>
+		<Description>Controls Meta MAUI package for Uno platforms</Description>
+		<PackageTags>uno;maui;meta;controls;gtk;linux;skia;wpf;webassembly;wasm;platforms;uno-platform</PackageTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Uno.Maui.Controls.Build.Tasks\Uno.Maui.Controls.Build.Tasks.csproj" />
+	  <ProjectReference Include="..\Uno.Maui.Controls.Core\Uno.Maui.Controls.Core.csproj" />
+	  <ProjectReference Include="..\Uno.Maui.Controls.Xaml\Uno.Maui.Controls.Xaml.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -42,4 +42,47 @@
     <AnalysisMode>All</AnalysisMode>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <_MauiDotNetVersionMajor Condition="'$(_MauiDotNetVersionMajor)' == ''">8</_MauiDotNetVersionMajor>
+    <_MauiDotNetVersionMinor Condition="'$(_MauiDotNetVersionMinor)' == ''">0</_MauiDotNetVersionMinor>
+    <_MauiDotNetVersion Condition="'$(_MauiDotNetVersion)' == ''">$(_MauiDotNetVersionMajor).$(_MauiDotNetVersionMinor)</_MauiDotNetVersion>
+    <_MauiDotNetTfm Condition="'$(_MauiDotNetTfm)' == ''">net$(_MauiDotNetVersion)</_MauiDotNetTfm>
+
+    <_MauiPreviousDotNetVersionMajor Condition="'$(_MauiPreviousDotNetVersionMajor)' == ''">7</_MauiPreviousDotNetVersionMajor>
+    <_MauiPreviousDotNetVersionMinor Condition="'$(_MauiPreviousDotNetVersionMinor)' == ''">0</_MauiPreviousDotNetVersionMinor>
+    <_MauiPreviousDotNetVersion Condition="'$(_MauiPreviousDotNetVersion)' == ''">$(_MauiPreviousDotNetVersionMajor).$(_MauiPreviousDotNetVersionMinor)</_MauiPreviousDotNetVersion>
+    <_MauiPreviousDotNetVersionNoDot Condition="'$(_MauiPreviousDotNetVersionNoDot)' == ''">$(_MauiPreviousDotNetVersionMajor)$(_MauiPreviousDotNetVersionMinor)</_MauiPreviousDotNetVersionNoDot>
+    <_MauiPreviousDotNetTfm Condition="'$(_MauiPreviousDotNetTfm)' == ''">net$(_MauiPreviousDotNetVersion)</_MauiPreviousDotNetTfm>
+
+    <_MauiTargetPlatformIdentifier>$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)'))</_MauiTargetPlatformIdentifier>
+    <_MauiNoTargetPlatform>false</_MauiNoTargetPlatform>
+    <_MauiNoTargetPlatform Condition="'$(_MauiTargetPlatformIdentifier)' == ''">True</_MauiNoTargetPlatform>
+    <_MauiTargetPlatformIsAndroid>false</_MauiTargetPlatformIsAndroid>
+    <_MauiTargetPlatformIsAndroid Condition="'$(_MauiTargetPlatformIdentifier)' == 'android'">True</_MauiTargetPlatformIsAndroid>
+    <_MauiTargetPlatformIsiOS>false</_MauiTargetPlatformIsiOS>
+    <_MauiTargetPlatformIsiOS Condition="'$(_MauiTargetPlatformIdentifier)' == 'ios'">True</_MauiTargetPlatformIsiOS>
+    <_MauiTargetPlatformIsMacCatalyst>false</_MauiTargetPlatformIsMacCatalyst>
+    <_MauiTargetPlatformIsMacCatalyst Condition="'$(_MauiTargetPlatformIdentifier)' == 'maccatalyst'">True</_MauiTargetPlatformIsMacCatalyst>
+    <_MauiTargetPlatformIsmacOS>false</_MauiTargetPlatformIsmacOS>
+    <_MauiTargetPlatformIsmacOS Condition="'$(_MauiTargetPlatformIdentifier)' == 'macos'">True</_MauiTargetPlatformIsmacOS>
+    <_MauiTargetPlatformIstvOS>false</_MauiTargetPlatformIstvOS>
+    <_MauiTargetPlatformIstvOS Condition="'$(_MauiTargetPlatformIdentifier)' == 'tvos'">True</_MauiTargetPlatformIstvOS>
+    <_MauiTargetPlatformIsWindows>false</_MauiTargetPlatformIsWindows>
+    <_MauiTargetPlatformIsWindows Condition="$(_MauiTargetPlatformIdentifier.Contains('windows')) == 'True'">True</_MauiTargetPlatformIsWindows>
+    <_MauiTargetPlatformIsTizen>false</_MauiTargetPlatformIsTizen>
+    <_MauiTargetPlatformIsTizen Condition="'$(_MauiTargetPlatformIdentifier)' == 'tizen'">True</_MauiTargetPlatformIsTizen>
+  </PropertyGroup>
+  
+  <PropertyGroup Label="Uno">
+    <_IsUno>false</_IsUno>
+    <_IsUno Condition=" '$(TargetFramework)' == 'net7.0' or '$(TargetFramework)' == 'net8.0' ">true</_IsUno>
+    <_MauiTargetPlatformIsWindows Condition=" '$(_IsUno)' == 'true' ">true</_MauiTargetPlatformIsWindows>
+    <_MauiNoTargetPlatform Condition=" '$(_IsUno)' == 'true' ">false</_MauiNoTargetPlatform>
+    <DefineConstants>$(DefineConstants);PLATFORM;WINDOWS;MAUI_GRAPHICS_WIN2D</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Label="Uno" Condition=" '$(_IsUno)' == 'true' ">
+    <PackageReference Include="Uno.WinUI" Version="5.0.0-dev.3597" />
+  </ItemGroup>
+
 </Project>

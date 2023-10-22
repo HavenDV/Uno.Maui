@@ -30,6 +30,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{7196DDB7-D897-431D-B8B8-E139AA939832}"
 	ProjectSection(SolutionItems) = preProject
 		src\libs\Directory.Build.props = src\libs\Directory.Build.props
+		src\libs\MultiTargeting.targets = src\libs\MultiTargeting.targets
 	EndProjectSection
 EndProject
 Global
