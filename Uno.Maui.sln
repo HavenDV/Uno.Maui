@@ -33,6 +33,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{7196DDB7-D
 		src\libs\MultiTargeting.targets = src\libs\MultiTargeting.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Graphics", "Graphics", "{A6F67BE8-963F-49CC-9F82-6D9A8DAB75C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphics", "..\src\Graphics\src\Graphics\Graphics.csproj", "{390DBB0A-414F-4099-AFAC-ACE6FB25C5B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,10 @@ Global
 		{5E427080-B320-4934-8081-E4D3350CDFD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E427080-B320-4934-8081-E4D3350CDFD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E427080-B320-4934-8081-E4D3350CDFD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{390DBB0A-414F-4099-AFAC-ACE6FB25C5B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{390DBB0A-414F-4099-AFAC-ACE6FB25C5B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{390DBB0A-414F-4099-AFAC-ACE6FB25C5B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{390DBB0A-414F-4099-AFAC-ACE6FB25C5B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +83,7 @@ Global
 		{A0D40F30-A021-413F-8A20-02C44495F5C9} = {7196DDB7-D897-431D-B8B8-E139AA939832}
 		{7A89E4C3-DEC3-4058-BFF2-463DB5E9B9B9} = {7196DDB7-D897-431D-B8B8-E139AA939832}
 		{20395B6E-7308-479F-8A31-7620E973F813} = {7196DDB7-D897-431D-B8B8-E139AA939832}
+		{390DBB0A-414F-4099-AFAC-ACE6FB25C5B1} = {A6F67BE8-963F-49CC-9F82-6D9A8DAB75C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CED9A020-DBA5-4BE6-8096-75E528648EC1}
