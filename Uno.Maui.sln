@@ -9,29 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 		src\Directory.Build.props = src\Directory.Build.props
 		src\MultiTargeting.targets = src\MultiTargeting.targets
+		src\Directory.Build.targets = src\Directory.Build.targets
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{322199BD-B13C-4D01-B225-E344C3DD25EB}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 		.github\workflows\pr.yml = .github\workflows\pr.yml
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uno.Maui.Core", "src\libs\Uno.Maui.Core\Uno.Maui.Core.csproj", "{A0D40F30-A021-413F-8A20-02C44495F5C9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uno.Maui.Graphics", "src\libs\Uno.Maui.Graphics\Uno.Maui.Graphics.csproj", "{20395B6E-7308-479F-8A31-7620E973F813}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uno.Maui.Essentials", "src\libs\Uno.Maui.Essentials\Uno.Maui.Essentials.csproj", "{7A89E4C3-DEC3-4058-BFF2-463DB5E9B9B9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uno.Maui.Controls.Core", "src\libs\Uno.Maui.Controls.Core\Uno.Maui.Controls.Core.csproj", "{A9041FB2-5C48-44F8-9511-932764F50C04}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uno.Maui.Controls.Xaml", "src\libs\Uno.Maui.Controls.Xaml\Uno.Maui.Controls.Xaml.csproj", "{AD73C3F5-ECC2-41BE-9307-4631A85676BD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uno.Maui.Controls.Generators", "src\libs\Uno.Maui.Controls.Generators\Uno.Maui.Controls.Generators.csproj", "{5E427080-B320-4934-8081-E4D3350CDFD4}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{7196DDB7-D897-431D-B8B8-E139AA939832}"
-	ProjectSection(SolutionItems) = preProject
-		src\libs\Directory.Build.props = src\libs\Directory.Build.props
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Graphics", "Graphics", "{A6F67BE8-963F-49CC-9F82-6D9A8DAB75C1}"
@@ -44,30 +28,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A0D40F30-A021-413F-8A20-02C44495F5C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A0D40F30-A021-413F-8A20-02C44495F5C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A0D40F30-A021-413F-8A20-02C44495F5C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A0D40F30-A021-413F-8A20-02C44495F5C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{20395B6E-7308-479F-8A31-7620E973F813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20395B6E-7308-479F-8A31-7620E973F813}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20395B6E-7308-479F-8A31-7620E973F813}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20395B6E-7308-479F-8A31-7620E973F813}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A89E4C3-DEC3-4058-BFF2-463DB5E9B9B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A89E4C3-DEC3-4058-BFF2-463DB5E9B9B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A89E4C3-DEC3-4058-BFF2-463DB5E9B9B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A89E4C3-DEC3-4058-BFF2-463DB5E9B9B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A9041FB2-5C48-44F8-9511-932764F50C04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9041FB2-5C48-44F8-9511-932764F50C04}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9041FB2-5C48-44F8-9511-932764F50C04}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9041FB2-5C48-44F8-9511-932764F50C04}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AD73C3F5-ECC2-41BE-9307-4631A85676BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD73C3F5-ECC2-41BE-9307-4631A85676BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AD73C3F5-ECC2-41BE-9307-4631A85676BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AD73C3F5-ECC2-41BE-9307-4631A85676BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5E427080-B320-4934-8081-E4D3350CDFD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E427080-B320-4934-8081-E4D3350CDFD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E427080-B320-4934-8081-E4D3350CDFD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E427080-B320-4934-8081-E4D3350CDFD4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C90736DF-2E86-4467-B597-FA9F2B1950BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C90736DF-2E86-4467-B597-FA9F2B1950BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C90736DF-2E86-4467-B597-FA9F2B1950BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -78,12 +38,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{322199BD-B13C-4D01-B225-E344C3DD25EB} = {E793AF18-4371-4EBD-96FC-195EB1798855}
-		{A9041FB2-5C48-44F8-9511-932764F50C04} = {7196DDB7-D897-431D-B8B8-E139AA939832}
-		{5E427080-B320-4934-8081-E4D3350CDFD4} = {7196DDB7-D897-431D-B8B8-E139AA939832}
-		{AD73C3F5-ECC2-41BE-9307-4631A85676BD} = {7196DDB7-D897-431D-B8B8-E139AA939832}
-		{A0D40F30-A021-413F-8A20-02C44495F5C9} = {7196DDB7-D897-431D-B8B8-E139AA939832}
-		{7A89E4C3-DEC3-4058-BFF2-463DB5E9B9B9} = {7196DDB7-D897-431D-B8B8-E139AA939832}
-		{20395B6E-7308-479F-8A31-7620E973F813} = {7196DDB7-D897-431D-B8B8-E139AA939832}
 		{C90736DF-2E86-4467-B597-FA9F2B1950BD} = {A6F67BE8-963F-49CC-9F82-6D9A8DAB75C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

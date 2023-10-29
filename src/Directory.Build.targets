@@ -1,0 +1,7 @@
+<Project>
+
+  <PropertyGroup>
+    <PackageId>H.Uno.$(PackageId.Replace('Microsoft.', ''))</PackageId>
+  </PropertyGroup>
+  
+</Project>
