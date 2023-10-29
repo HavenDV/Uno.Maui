@@ -1,5 +1,7 @@
 <Project>
 
+  <Import Project="../maui/Directory.Build.targets" />
+
   <PropertyGroup>
     <PackageId>H.Uno.$(PackageId.Replace('Microsoft.', ''))</PackageId>
   </PropertyGroup>
@@ -7,6 +9,10 @@
   <ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
     <PackageReference Update="Microsoft.WindowsAppSDK" Version="1.4.231008000" />
     <PackageReference Update="Microsoft.Graphics.Win2D" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.0.0-preview1.23080.2" />
   </ItemGroup>
 
   <!-- #### Start of MultiTargeting.targets #### -->

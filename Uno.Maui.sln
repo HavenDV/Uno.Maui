@@ -22,6 +22,34 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Graphics", "Graphics", "{A6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphics", "src\Graphics\src\Graphics\Graphics.csproj", "{C90736DF-2E86-4467-B597-FA9F2B1950BD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "maui", "maui", "{392E1F1A-A229-4E86-9808-960BD4B5155F}"
+	ProjectSection(SolutionItems) = preProject
+		maui\Directory.Build.props = maui\Directory.Build.props
+		maui\Directory.Build.targets = maui\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eng", "eng", "{67B7C4CC-271B-4B17-BF0E-45F4CB05217C}"
+	ProjectSection(SolutionItems) = preProject
+		maui\eng\AndroidX.targets = maui\eng\AndroidX.targets
+		maui\eng\BannedApis.targets = maui\eng\BannedApis.targets
+		maui\eng\BannedSymbols.txt = maui\eng\BannedSymbols.txt
+		maui\eng\Environment.Build.props = maui\eng\Environment.Build.props
+		maui\eng\Git.Build.targets = maui\eng\Git.Build.targets
+		maui\eng\ILRepack.targets = maui\eng\ILRepack.targets
+		maui\eng\Microsoft.Extensions.targets = maui\eng\Microsoft.Extensions.targets
+		maui\eng\Nuget.targets = maui\eng\Nuget.targets
+		maui\eng\PublicAPI.empty.txt = maui\eng\PublicAPI.empty.txt
+		maui\eng\README.md = maui\eng\README.md
+		maui\eng\ReplaceText.targets = maui\eng\ReplaceText.targets
+		maui\eng\SourceLink.Build.props = maui\eng\SourceLink.Build.props
+		maui\eng\UWP.Build.props = maui\eng\UWP.Build.props
+		maui\eng\UWP.Build.targets = maui\eng\UWP.Build.targets
+		maui\eng\Version.Details.xml = maui\eng\Version.Details.xml
+		maui\eng\Versions.dev.targets = maui\eng\Versions.dev.targets
+		maui\eng\Versions.props = maui\eng\Versions.props
+		maui\eng\Versions.targets = maui\eng\Versions.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +67,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{322199BD-B13C-4D01-B225-E344C3DD25EB} = {E793AF18-4371-4EBD-96FC-195EB1798855}
 		{C90736DF-2E86-4467-B597-FA9F2B1950BD} = {A6F67BE8-963F-49CC-9F82-6D9A8DAB75C1}
+		{67B7C4CC-271B-4B17-BF0E-45F4CB05217C} = {392E1F1A-A229-4E86-9808-960BD4B5155F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CED9A020-DBA5-4BE6-8096-75E528648EC1}
