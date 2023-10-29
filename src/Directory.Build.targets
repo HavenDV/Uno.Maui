@@ -3,5 +3,34 @@
   <PropertyGroup>
     <PackageId>H.Uno.$(PackageId.Replace('Microsoft.', ''))</PackageId>
   </PropertyGroup>
+
+  <ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
+    <PackageReference Update="Microsoft.WindowsAppSDK" Version="1.4.231008000" />
+    <PackageReference Update="Microsoft.Graphics.Win2D" Version="1.1.0" />
+  </ItemGroup>
+
+  <!-- #### Start of MultiTargeting.targets #### -->
+  
+  <ItemGroup Condition=" '$(_MauiTargetPlatformIsUno)' != 'True' ">
+    <Compile Remove="**\*.Uno.cs" />
+    <None Include="**\*.Uno.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+    <Compile Remove="**\Uno\**\*.cs" />
+    <None Include="**\Uno\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+    <MauiXaml Remove="**\*.Uno.xaml" />
+    <None Include="**\*.Uno.xaml" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+    <Compile Remove="**\*.Uno.xaml.cs" />
+    <None Include="**\*.Uno.xaml.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+    <MauiXaml Remove="**\Uno\**\*.xaml" />
+    <None Include="**\Uno\**\*.xaml" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+    <Compile Remove="**\Uno\**\*.xaml.cs" />
+    <None Include="**\Uno\**\*.xaml.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+  </ItemGroup>
+
+  <!-- Uno -->
+  <PropertyGroup Condition=" '$(_MauiTargetPlatformIsUno)' == 'True' ">
+    <DefineConstants>UNO;$(DefineConstants)</DefineConstants>
+  </PropertyGroup>
+
+  <!-- #### End of MultiTargeting.targets #### -->
   
 </Project>

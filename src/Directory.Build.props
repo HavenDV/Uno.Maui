@@ -137,18 +137,16 @@
   </ItemGroup>
 
   <PropertyGroup Label="Uno">
-    <_IsUno>false</_IsUno>
-    <_IsUno Condition=" '$(TargetFramework)' == 'net7.0' or '$(TargetFramework)' == 'net8.0' ">true</_IsUno>
+    <_MauiTargetPlatformIsUno>false</_MauiTargetPlatformIsUno>
+    <_MauiTargetPlatformIsUno Condition=" '$(TargetFramework)' == 'net7.0' or '$(TargetFramework)' == 'net8.0' ">false</_MauiTargetPlatformIsUno>
   </PropertyGroup>
   
-  <PropertyGroup Label="Uno" Condition=" '$(_IsUno)' == 'true' ">
-    <!--    <_MauiTargetPlatformIsWindows>true</_MauiTargetPlatformIsWindows>-->
+  <PropertyGroup Label="Uno" Condition=" '$(_MauiTargetPlatformIsUno)' == 'true' ">
     <_MauiNoTargetPlatform>false</_MauiNoTargetPlatform>
-    <DefineConstants>$(DefineConstants);PLATFORM;WINDOWS;MAUI_GRAPHICS_WIN2D</DefineConstants>
     <NoWarn>$(NoWarn);NU5104</NoWarn>
   </PropertyGroup>
 
-  <ItemGroup Label="Uno" Condition=" '$(_IsUno)' == 'true' ">
+  <ItemGroup Label="Uno" Condition=" '$(_MauiTargetPlatformIsUno)' == 'true' ">
     <PackageReference Include="Uno.WinUI" Version="5.0.0-dev.3597" />
   </ItemGroup>
   
