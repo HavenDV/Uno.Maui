@@ -1,0 +1,5 @@
+<Project>
+
+  <Target Name="_CopyToLibraryPacks" AfterTargets="Pack" Condition=" '$(IsPackable)' == 'true' "/>
+
+</Project>

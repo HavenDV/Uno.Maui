@@ -2,8 +2,13 @@
 
   <PropertyGroup Label="Common">
     <LangVersion>preview</LangVersion>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <MauiRootDirectory>$(MSBuildThisFileDirectory)</MauiRootDirectory>
+    <MauiSrcDirectory>$(MSBuildThisFileDirectory)</MauiSrcDirectory>
   </PropertyGroup>
   
 </Project>
