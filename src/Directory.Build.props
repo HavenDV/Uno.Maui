@@ -11,7 +11,9 @@
   <PropertyGroup>
     <LicenseFile> </LicenseFile>
     <PackageThirdPartyNoticesFile> </PackageThirdPartyNoticesFile>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
     <MauiGraphicsPlatforms>;</MauiGraphicsPlatforms>
+<!--    <MauiGraphicsPlatforms>net8.0-windows10.0.17763.0</MauiGraphicsPlatforms>-->
     <MauiGraphicsPreviousPlatforms>;</MauiGraphicsPreviousPlatforms>
     <MauiRootDirectory>$(MSBuildThisFileDirectory)</MauiRootDirectory>
     <MauiSrcDirectory>$(MSBuildThisFileDirectory)</MauiSrcDirectory>
