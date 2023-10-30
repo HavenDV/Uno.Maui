@@ -1,5 +1,9 @@
 <Project>
 
+  <ItemGroup Condition="'$(_MauiTargetPlatformIsUno)' == 'True' AND '$(RootNamespace)' == 'Microsoft.Maui.Graphics.Skia'">
+    <PackageReference Include="SkiaSharp.Views.Uno.WinUI" Version="2.88.6" />
+  </ItemGroup>
+  
   <Import Project="../maui/Directory.Build.targets" />
 
   <PropertyGroup>
