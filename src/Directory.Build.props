@@ -30,7 +30,7 @@
   <PropertyGroup Label="Nuget">
     <Version>0.2.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <Authors>Uno Platform</Authors>
     <Owners>unoplatform</Owners>
     <Copyright>Copyright (C) 2015-2023 Uno Platform Inc. - all rights reserved</Copyright>

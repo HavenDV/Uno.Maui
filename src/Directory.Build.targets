@@ -3,7 +3,8 @@
   <Import Project="../maui/Directory.Build.targets" />
 
   <PropertyGroup>
-    <PackageId>H.Uno.$(PackageId.Replace('Microsoft.', ''))</PackageId>
+    <PackageId Condition="'$(PackageId)' != ''">H.Uno.$(PackageId.Replace('Microsoft.', ''))</PackageId>
+    <AssemblyName Condition="'$(AssemblyName)' != '' AND '$(OutputType)' == 'Library'">H.Uno.$(AssemblyName.Replace('Microsoft.', ''))</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
@@ -13,6 +14,11 @@
 
   <ItemGroup>
     <PackageReference Update="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.0.0-preview1.23080.2" />
+    <PackageReference Update="SkiaSharp" Version="2.88.6" />
+    <PackageReference Update="SkiaSharp.Views" Version="2.88.6" />
+    <PackageReference Update="SkiaSharp.Views.WinUI" Version="2.88.6" />
+    <PackageReference Update="SkiaSharp.Views.Gtk3" Version="2.88.6" />
+    <PackageReference Update="SkiaSharp.Views.WPF" Version="2.88.6" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(_MauiTargetPlatformIsWindows)' == 'True'">
