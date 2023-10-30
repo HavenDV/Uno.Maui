@@ -15,6 +15,8 @@
     <MauiPlatforms>;</MauiPlatforms>
     <MauiPreviousPlatforms>;</MauiPreviousPlatforms>
     <MauiGraphicsPlatforms>;</MauiGraphicsPlatforms>
+    <WindowsMauiPlatforms>net8.0</WindowsMauiPlatforms>
+    <WindowsMauiPreviousPlatforms>net7.0</WindowsMauiPreviousPlatforms>
 <!--    <MauiGraphicsPlatforms>net8.0-windows10.0.17763.0</MauiGraphicsPlatforms>-->
     <MauiGraphicsPreviousPlatforms>;</MauiGraphicsPreviousPlatforms>
     <MauiRootDirectory>$(MSBuildThisFileDirectory)</MauiRootDirectory>

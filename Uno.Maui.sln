@@ -80,6 +80,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Essentials", "src\Essential
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "src\Core\src\Core.csproj", "{945F2E14-BC18-4216-B6EB-8F85804C5643}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphics.Win2D", "src\Graphics\src\Graphics.Win2D\Graphics.Win2D.csproj", "{840AAA12-C5B3-4E8C-89A1-5D4D6CCD8184}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -122,6 +124,10 @@ Global
 		{945F2E14-BC18-4216-B6EB-8F85804C5643}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{945F2E14-BC18-4216-B6EB-8F85804C5643}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{945F2E14-BC18-4216-B6EB-8F85804C5643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{840AAA12-C5B3-4E8C-89A1-5D4D6CCD8184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{840AAA12-C5B3-4E8C-89A1-5D4D6CCD8184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{840AAA12-C5B3-4E8C-89A1-5D4D6CCD8184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{840AAA12-C5B3-4E8C-89A1-5D4D6CCD8184}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,6 +149,7 @@ Global
 		{74F17878-0F3C-4E43-A90B-7C4D6840559E} = {F36F5E75-B185-4A68-A660-8910D097227A}
 		{33CEEC66-3BB1-40EF-905B-A3A067390954} = {74F17878-0F3C-4E43-A90B-7C4D6840559E}
 		{945F2E14-BC18-4216-B6EB-8F85804C5643} = {3FA8F139-BAD3-463D-803D-C4CC83C72A0C}
+		{840AAA12-C5B3-4E8C-89A1-5D4D6CCD8184} = {C46DE99E-0C60-4772-8E15-0280BEE90747}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CED9A020-DBA5-4BE6-8096-75E528648EC1}

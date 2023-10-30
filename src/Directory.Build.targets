@@ -1,5 +1,9 @@
 <Project>
 
+  <ItemGroup Condition="'$(_MauiTargetPlatformIsUno)' == 'True' AND '$(RootNamespace)' == 'Microsoft.Maui.Graphics.Win2D.WinUI.Desktop'">
+    <PackageReference Remove="Microsoft.WindowsAppSDK" />
+    <PackageReference Remove="Microsoft.Graphics.Win2D" />
+  </ItemGroup>
   <ItemGroup Condition="'$(_MauiTargetPlatformIsUno)' == 'True' AND '$(RootNamespace)' == 'Microsoft.Maui.Graphics.Skia'">
     <PackageReference Include="SkiaSharp.Views.Uno.WinUI" Version="2.88.6" />
   </ItemGroup>
@@ -12,9 +16,12 @@
 <!--    <None Include="**\*.netstandard.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />-->
 <!--    <None Include="**\*.netstandard.*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />-->
   </ItemGroup>
-  
-  <PropertyGroup Condition="'$(_MauiTargetPlatformIsUno)' == 'True' AND '$(RootNamespace)' == 'Microsoft.Maui.Essentials'">
-    <WarningsNotAsErrors>$(WarningsNotAsErrors);Uno0001</WarningsNotAsErrors>
+
+  <ItemGroup Condition=" '$(_MauiTargetPlatformIsUno)' == 'True' AND '$(RootNamespace)' == 'Microsoft.Maui'">
+    <ProjectReference Include="..\..\Graphics\src\Graphics.Win2D\Graphics.Win2D.csproj" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(_MauiTargetPlatformIsUno)' == 'True' AND '$(RootNamespace)' == 'Microsoft.Maui'">
+    <DefineConstants>WINDOWS;$(DefineConstants)</DefineConstants>
   </PropertyGroup>
   
   <Import Project="../maui/Directory.Build.targets" />
@@ -58,6 +65,12 @@
     <Compile Remove="**\Uno\**\*.xaml.cs" />
     <None Include="**\Uno\**\*.xaml.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
   </ItemGroup>
+  <ItemGroup Condition=" '$(_MauiTargetPlatformIsUno)' == 'True' ">
+    <Compile Remove="**\*.Standard.cs" />
+    <None Include="**\*.Standard.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+    <Compile Remove="**\Standard\**\*.cs" />
+    <None Include="**\Standard\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+  </ItemGroup>
 
   <!-- Uno -->
   <PropertyGroup Condition=" '$(_MauiTargetPlatformIsUno)' == 'True' ">
@@ -67,7 +80,7 @@
   <PropertyGroup>
     <Version>0.3.0</Version>
     <PackageVersion>0.3.0</PackageVersion>
-    <WarningsNotAsErrors>$(WarningsNotAsErrors);NU5104</WarningsNotAsErrors>
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);NU5104;Uno0001</WarningsNotAsErrors>
   </PropertyGroup>
   
   <Target Name="SetVersions"/>
