@@ -3,6 +3,19 @@
   <ItemGroup Condition="'$(_MauiTargetPlatformIsUno)' == 'True' AND '$(RootNamespace)' == 'Microsoft.Maui.Graphics.Skia'">
     <PackageReference Include="SkiaSharp.Views.Uno.WinUI" Version="2.88.6" />
   </ItemGroup>
+  <ItemGroup Condition="'$(_MauiTargetPlatformIsUno)' == 'True' AND '$(RootNamespace)' == 'Microsoft.Maui.Essentials'">
+    <Compile Include="**\*.uno.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+    <Compile Include="**\*.uno.*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+    <Compile Remove="**\Accelerometer.netstandard.tvos.macos.cs" />
+<!--    <Compile Remove="**\*.netstandard.cs" />-->
+<!--    <Compile Remove="**\*.netstandard.*.cs" />-->
+<!--    <None Include="**\*.netstandard.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />-->
+<!--    <None Include="**\*.netstandard.*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />-->
+  </ItemGroup>
+  
+  <PropertyGroup Condition="'$(_MauiTargetPlatformIsUno)' == 'True' AND '$(RootNamespace)' == 'Microsoft.Maui.Essentials'">
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);Uno0001</WarningsNotAsErrors>
+  </PropertyGroup>
   
   <Import Project="../maui/Directory.Build.targets" />
 
