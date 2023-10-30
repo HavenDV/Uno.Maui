@@ -1,3 +1,5 @@
+using System;
+
 namespace Microsoft.Graphics.Canvas.Text;
 
 public struct CanvasLineMetrics : IEquatable<CanvasLineMetrics>

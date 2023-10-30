@@ -1,3 +1,4 @@
+using System;
 using Windows.Graphics.Effects;
 using Microsoft.Maui.Graphics;
 using Rect = Windows.Foundation.Rect;
