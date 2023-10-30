@@ -55,7 +55,7 @@
 
   <PropertyGroup Label="Uno">
     <_MauiTargetPlatformIsUno>false</_MauiTargetPlatformIsUno>
-    <_MauiTargetPlatformIsUno Condition=" '$(TargetFramework)' == 'net7.0' or '$(TargetFramework)' == 'net8.0' ">false</_MauiTargetPlatformIsUno>
+    <_MauiTargetPlatformIsUno Condition=" '$(TargetFramework)' == 'net7.0' or '$(TargetFramework)' == 'net8.0' ">true</_MauiTargetPlatformIsUno>
   </PropertyGroup>
   
   <PropertyGroup Label="Uno" Condition=" '$(_MauiTargetPlatformIsUno)' == 'true' ">
