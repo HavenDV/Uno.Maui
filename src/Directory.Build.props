@@ -17,7 +17,11 @@
     <MauiGraphicsPlatforms>;</MauiGraphicsPlatforms>
     <WindowsMauiPlatforms>net8.0</WindowsMauiPlatforms>
     <WindowsMauiPreviousPlatforms>net7.0</WindowsMauiPreviousPlatforms>
-<!--    <MauiGraphicsPlatforms>net8.0-windows10.0.17763.0</MauiGraphicsPlatforms>-->
+    
+    <WindowsMauiPlatforms Condition="$([MSBuild]::IsOSPlatform('windows'))">$(WindowsMauiPlatforms);net8.0-windows10.0.18362.0</WindowsMauiPlatforms>
+    <MauiPlatforms Condition="$([MSBuild]::IsOSPlatform('windows'))">net8.0-windows10.0.18362.0</MauiPlatforms>
+    <MauiGraphicsPlatforms Condition="$([MSBuild]::IsOSPlatform('windows'))">net8.0-windows10.0.18362.0</MauiGraphicsPlatforms>
+    
     <MauiGraphicsPreviousPlatforms>;</MauiGraphicsPreviousPlatforms>
     <MauiRootDirectory>$(MSBuildThisFileDirectory)</MauiRootDirectory>
     <MauiSrcDirectory>$(MSBuildThisFileDirectory)</MauiSrcDirectory>
