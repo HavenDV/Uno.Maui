@@ -71,7 +71,7 @@
   </PropertyGroup>
 
   <ItemGroup Label="Uno" Condition=" '$(_MauiTargetPlatformIsUno)' == 'true' ">
-    <PackageReference Include="Uno.WinUI" Version="5.0.0-dev.3597" />
+    <PackageReference Include="Uno.WinUI" Version="5.0.19" />
   </ItemGroup>
   
 </Project>
